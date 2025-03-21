@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import Product1 from './../assets/CL750.png';
-import Product2 from './../assets/CL750.png';
-import Product3 from './../assets/CL750.png';
-import Product4 from './../assets/CL750.png';
-import Product5 from './../assets/CL750.png';
-import Product6 from './../assets/CL750.png';
-import Product7 from './../assets/CL750.png';
-import Product8 from './../assets/CL750.png';
-import Product9 from './../assets/CL750.png';
-import Product10 from './../assets/CL750.png';
-import Product11 from './../assets/CL750.png';
-import Product12 from './../assets/CL750.png';
+import innoMC20R from './../assets/inno-MC20R.png';
+import innoMC15 from './../assets/inno-MC15.png';
+import autoclave from './../assets/autoclave-sterilizer.png';
+import liquidcontainer from './../assets/liquid-nitrogen-container.png';
+import freezer86 from './../assets/86-freezer.png';
+import freezer40 from './../assets/40-Freezer.png';
+import phmeter from './../assets/PH-18P.png';
+import sbspectrophotometer from './../assets/single-beam-spectrophotometer.png';
+import dbspectrophotometer from './../assets/double-beam-spectrophotometer.png';
+import Product12 from './../assets/Inno-MC20R.png';
 
 const ProductListing = () => {
   const [showMore, setShowMore] = useState(false);
@@ -19,98 +17,82 @@ const ProductListing = () => {
   const products = [
     {
       id: 1,
-      name: 'Product 1',
-      description: 'Innovative Medical Device',
-      image: Product1,
+      name: 'Micro Centrifuge inno-MC-20R',
+      image: innoMC20R,
     },
     {
       id: 2,
-      name: 'Product 2',
-      description: 'Advanced Diagnostic Tool',
-      image: Product2,
+      name: 'Micro Centrifuge inno-MC-16R',
+      image: innoMC20R,
     },
     {
       id: 3,
-      name: 'Product 3',
-      description: 'Cutting-Edge Lab Equipment',
-      image: Product3,
+      name: 'Micro Centrifuge inno-MC-15',
+      image: innoMC15,
     },
     {
       id: 4,
-      name: 'Product 4',
-      description: 'Efficient Medical Solution',
-      image: Product4,
+      name: 'Autoclaves inno-AC51',
+      image: autoclave,
     },
     {
       id: 5,
-      name: 'Product 5',
-      description: 'High-Performance Analyzer',
-      image: Product5,
+      name: 'Autoclaves inno-AC101',
+      image: autoclave,
     },
     {
       id: 6,
-      name: 'Product 6',
-      description: 'Portable Medical Device',
-      image: Product6,
+      name: 'Liquid Nitrogen Container C10',
+      image: liquidcontainer,
     },
     {
       id: 7,
-      name: 'Product 7',
-      description: 'Innovative Medical Device',
-      image: Product7,
+      name: 'Liquid Nitrogen Container C35',
+      image: liquidcontainer,
     },
     {
       id: 8,
-      name: 'Product 8',
-      description: 'Advanced Diagnostic Tool',
-      image: Product8,
+      name: 'Liquid Nitrogen Container C50',
+      image: liquidcontainer,
     },
     {
       id: 9,
-      name: 'Product 9',
-      description: 'Cutting-Edge Lab Equipment',
-      image: Product9,
+      name: '-86°C Freezer inno-86690',
+      image: freezer86,
     },
     {
       id: 10,
-      name: 'Product 10',
-      description: 'Efficient Medical Solution',
-      image: Product10,
+      name: '-40°C Freezer inno-40460',
+      image: freezer40,
     },
     {
       id: 11,
-      name: 'Product 11',
-      description: 'High-Performance Analyzer',
-      image: Product11,
+      name: 'Benchtop pH Meter inno-PH18',
+      image: phmeter,
     },
     {
       id: 12,
-      name: 'Product 12',
-      description: 'Portable Medical Device',
+      name: 'Single Beam Spectrophoto...',
+      image: sbspectrophotometer,
+    },
+    {
+      id: 13,
+      name: 'Double Beam Spectrophoto...',
+      image: dbspectrophotometer,
+    },
+    {
+      id: 14,
+      name: 'Product 10',
       image: Product12,
     },
     {
-      id: 9,
-      name: 'Product 9',
-      description: 'Cutting-Edge Lab Equipment',
-      image: Product9,
-    },
-    {
-      id: 10,
-      name: 'Product 10',
-      description: 'Efficient Medical Solution',
-      image: Product10,
-    },
-    {
-      id: 11,
+      id: 15,
       name: 'Product 11',
-      description: 'High-Performance Analyzer',
-      image: Product11,
+      image: Product12,
     },
     {
-      id: 12,
+      id: 16,
       name: 'Product 12',
-      description: 'Portable Medical Device',
       image: Product12,
     },
   ];
@@ -118,7 +100,7 @@ const ProductListing = () => {
   const visibleProducts = showMore ? products : products.slice(0, 8);
 
   return (
-    <section className='py-5' style={{ padding: '2rem' }}>
+    <section className='py-5' style={{ padding: '2rem' }} id='products'>
       <div className='container my-5'>
         <h2 className='fw-bold mb-5 text-center'>
           Our Featured <span style={{ color: '#f16921' }}>Products</span>
@@ -144,9 +126,13 @@ const ProductListing = () => {
                   }}
                 />
                 <div className='card-body text-center'>
-                  <h5 className='card-title'>{product.name}</h5>
-                  <p className='card-text'>{product.description}</p>
-                  <div className='d-flex justify-content-between mt-4'>
+                  <p
+                    className='card-title text-start d-block'
+                    style={{ fontWeight: '500', color: '#2d2d2d' }}
+                  >
+                    {product.name}
+                  </p>
+                  <div className='d-flex justify-content-between mt-2'>
                     <a href='#' className='ask-price'>
                       Ask for Price
                     </a>

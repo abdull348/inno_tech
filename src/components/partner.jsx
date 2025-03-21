@@ -23,7 +23,7 @@ const Partner = () => {
               research and healthcare solutions.
             </p>
             <a
-              href='#'
+              href='#contact'
               className='btn btn-contact mt-2'
               style={{
                 border: '1px solid #fff',

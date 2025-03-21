@@ -1,4 +1,4 @@
-import innotech from '../assets/innotech.png';
+import innotech from '../assets/nav-logo.svg';
 const Navbar = () => {
   return (
     <header id='header' className='header-space'>
@@ -20,28 +20,23 @@ const Navbar = () => {
           </button>
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ms-auto'>
-              <li className='nav-item active'>
-                <a className='nav-link ms-4' href='#'>
-                  Home
-                </a>
-              </li>
               <li className='nav-item'>
-                <a className='nav-link ms-4' href='#'>
+                <a className='nav-link ms-4' href='#about'>
                   About
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link ms-4' href='#'>
+                <a className='nav-link ms-4' href='#products'>
                   Products
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link ms-4' href='#'>
+                <a className='nav-link ms-4' href='#services'>
                   Services
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link ms-4 btn btn-contact' href='#'>
+                <a className='nav-link ms-4 btn btn-contact' href='#contact'>
                   Contact Us
                 </a>
               </li>

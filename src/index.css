@@ -86,23 +86,38 @@ button {
 .ask-price {
   font-size: 14px;
   text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 400;
+  color: #6b6b6b;
+  font-weight: 500;
 }
 .ask-price:hover {
   color: #f16921;
 }
 .cart-icon {
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   color: #f16921;
   font-weight: 400;
-  height: 30px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
 }
 .cart-icon:hover {
   color: #fff;
   border-radius: 50px;
   border: 1px solid #f16921;
   background-color: #f16921;
+}
+.about-button {
+  text-decoration: none;
+  border: 1px solid #1a1a1a;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 6px 12px;
+  transition: all 0.3s;
+}
+.about-button:hover {
+  border: 1px solid #1a1a1a;
+  background-color: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
 }

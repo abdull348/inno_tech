@@ -54,7 +54,7 @@ const Hero = () => {
           </p>
           <div className='position-relative'>
             <a
-              href='#'
+              href='#contact'
               className='btn btn-contact'
               style={{
                 border: '2px solid #1a1a1a',

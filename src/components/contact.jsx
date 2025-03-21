@@ -1,5 +1,3 @@
-import contactIllustration from '../assets/contact.svg';
-
 function ContactUs() {
   const formFields = [
     {
@@ -27,24 +25,33 @@ function ContactUs() {
   return (
     <div className='container py-5 section-wrapper' id='contact'>
       <div className='row align-items-center py-5'>
-        <div
-          className='text-center'
-          data-aos='fade-up'
-          data-aos-duration='2000'
-        >
-          <h2 className='fw-bold mb-2 text-center'>Get In Touch!</h2>
-        </div>
-        <div className='col-12 col-lg-6 mb-4 mb-lg-0 text-center'>
-          <img
-            data-aos='zoom-in'
-            data-aos-duration='2000'
-            src={contactIllustration}
-            alt='Contact Illustration'
-            className='img-fluid'
-            style={{ position: 'relative', zIndex: 1 }}
-            width={350}
-            height={250}
-          />
+        <div className='col-12 col-lg-6 mb-4 mb-lg-0'>
+          <h2 className='fw-bold mb-2'>
+            Get In <span style={{ color: '#f16921' }}>Touch!</span>
+          </h2>
+          <p
+            className='mt-2 lh-lg'
+            style={{
+              fontSize: '18px',
+              letterSpacing: '0.2px',
+              lineHeight: '1.6',
+            }}
+          >
+            Need to get in touch with us? Either fill out the form with your
+            inquiry or <br />
+            find the{' '}
+            <a
+              href='mailto:info@innotechtechnologies.us'
+              style={{
+                fontWeight: '500',
+                color: '#045cb4',
+                textDecoration: 'none',
+              }}
+            >
+              official email
+            </a>{' '}
+            you&apos;d like to contact below.
+          </p>
         </div>
 
         <div className='col-12 col-lg-6 p-2 p-lg-5'>

@@ -2,7 +2,7 @@ import AboutImage from '../assets/Choose-Us-Image.webp';
 
 const AboutUs = () => {
   return (
-    <div className='container my-5 pt-5'>
+    <div className='container my-5 pt-5' id='about'>
       <div className='row align-items-center my-5'>
         <div className='col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center'>
           <img src={AboutImage} alt='About Us' style={{ maxWidth: '485px' }} />
@@ -57,7 +57,7 @@ const AboutUs = () => {
             </li>
           </ul>
 
-          <a href='#' className='about-button mt-1'>
+          <a href='#about' className='about-button mt-1'>
             About Us
           </a>
         </div>
