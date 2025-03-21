@@ -1,6 +1,6 @@
-import Hero1 from '../assets/hero1.jpg';
-import Hero2 from '../assets/hero2.jpg';
-import Hero3 from '../assets/hero3.jpg';
+import Hero1 from '../assets/Hero1.jpg';
+import Hero2 from '../assets/Hero2.jpg';
+import Hero3 from '../assets/Hero3.jpg';
 
 const Hero = () => {
   return (
