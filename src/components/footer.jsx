@@ -1,7 +1,7 @@
 import { HiMail } from 'react-icons/hi';
 import { TbPhoneCall } from 'react-icons/tb';
-import usa from '/src/assets/us.svg';
-import logo from '/src/assets/footer-logo.svg';
+import usa from '/assets/us.svg';
+import logo from '/assets/footer-logo.svg';
 
 function Footer() {
   const footerInfo = [

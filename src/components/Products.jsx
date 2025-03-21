@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import innoMC20R from '/src/assets/inno-MC20R.png';
-import innoMC15 from '/src/assets/inno-MC15.png';
-import autoclave from '/src/assets/autoclave-sterilizer.png';
-import liquidcontainer from '/src/assets/liquid-nitrogen-container.png';
-import freezer86 from '/src/assets/86-freezer.png';
-import freezer40 from '/src/assets/40-Freezer.png';
-import phmeter from '/src/assets/PH-18P.png';
-import sbspectrophotometer from '/src/assets/single-beam-spectrophotometer.png';
-import dbspectrophotometer from '/src/assets/double-beam-spectrophotometer.png';
-import Product12 from '/src/assets/Inno-MC20R.png';
+import innoMC20R from '/assets/inno-MC20R.png';
+import innoMC16R from '/assets/inno-MC20R.png';
+import innoMC15 from '/assets/inno-MC15.png';
+import autoclave from '/assets/autoclave-sterilizer.png';
+import liquidcontainer from '/assets/liquid-nitrogen-container.png';
+import freezer86 from '/assets/86-freezer.png';
+import freezer40 from '/assets/40-Freezer.png';
+import phmeter from '/assets/PH-18P.png';
+import sbspectrophotometer from '/assets/single-beam-spectrophotometer.png';
+import dbspectrophotometer from '/assets/double-beam-spectrophotometer.png';
 
 const ProductListing = () => {
   const [showMore, setShowMore] = useState(false);
@@ -23,7 +23,7 @@ const ProductListing = () => {
     {
       id: 2,
       name: 'Micro Centrifuge inno-MC-16R',
-      image: innoMC20R,
+      image: innoMC16R,
     },
     {
       id: 3,
@@ -79,21 +79,6 @@ const ProductListing = () => {
       id: 13,
       name: 'Double Beam Spectrophoto...',
       image: dbspectrophotometer,
-    },
-    {
-      id: 14,
-      name: 'Product 10',
-      image: Product12,
-    },
-    {
-      id: 15,
-      name: 'Product 11',
-      image: Product12,
-    },
-    {
-      id: 16,
-      name: 'Product 12',
-      image: Product12,
     },
   ];
 

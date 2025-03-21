@@ -1,4 +1,4 @@
-import partnerImage from '/src/assets/partner.jpg';
+import partnerImage from '/assets/partner.jpg';
 
 const Partner = () => {
   return (
