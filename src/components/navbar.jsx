@@ -1,4 +1,4 @@
-import innotech from '../assets/nav-logo.svg';
+import innotech from '/src/assets/nav-logo.svg';
 const Navbar = () => {
   return (
     <header id='header' className='header-space'>
