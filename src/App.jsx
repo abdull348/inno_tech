@@ -1,25 +1,18 @@
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
-import Hero from './components/hero';
-import AboutUs from './components/about';
-import ProductListing from './components/Products';
-import Partner from './components/partner';
-import ContactUs from './components/contact';
+import Home from './pages/home';
+import Product from './pages/product';
+import ListingProduct from './components/productListing';
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <AboutUs className='container mx-auto mt-5 p-4' />
-        <ProductListing className='container mx-auto mt-5 p-4' />
-        <Partner className='container mx-auto mt-5 p-4' />
-        <ContactUs className='container mx-auto mt-5 p-4' />
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/product' element={<Product />} />
+        <Route path='/product/:productName' element={<ListingProduct />} />
+      </Routes>
+    </Router>
   );
 };
 

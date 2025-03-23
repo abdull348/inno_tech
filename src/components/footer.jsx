@@ -54,7 +54,7 @@ function Footer() {
           Call us
         </p>
       ),
-      content: <p className='m-0 text-white'>+(971) 91919192</p>,
+      content: <p className='m-0 text-white'>+1 (818) 943-1786</p>,
     },
   ];
 
@@ -70,7 +70,14 @@ function Footer() {
       <div className='container'>
         <div className='row text-center text-md-start'>
           <div className='col-12 col-md-3 d-flex justify-content-center justify-content-md-start mb-4 mb-md-0'>
-            <img src={logo} alt='Logo' width={180} height={60} />
+            <a className='navbar-brand' href='/'>
+              <img
+                src={logo}
+                alt='Logo'
+                className='img-fluid'
+                style={{ maxWidth: '160px', maxHeight: '60px' }}
+              />
+            </a>
           </div>
 
           {footerInfo.map((info, index) => (

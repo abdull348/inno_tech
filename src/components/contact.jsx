@@ -23,10 +23,10 @@ function ContactUs() {
   ];
 
   return (
-    <div className='container py-5 section-wrapper' id='contact'>
+    <div className='container section-wrapper' id='contact'>
       <div className='row align-items-center py-5'>
-        <div className='col-12 col-lg-6 mb-4 mb-lg-0'>
-          <h2 className='fw-bold mb-2'>
+        <div className='col-12 col-lg-6 mb-lg-0 p-4 p-lg-2'>
+          <h2 className='fw-bold fs-2 mb-2'>
             Get In <span style={{ color: '#f16921' }}>Touch!</span>
           </h2>
           <p
@@ -54,7 +54,7 @@ function ContactUs() {
           </p>
         </div>
 
-        <div className='col-12 col-lg-6 p-2 p-lg-5'>
+        <div className='col-12 col-lg-6 p-4 p-lg-5'>
           <div
             className='card shadow-sm border rounded-3'
             data-aos='zoom-in'

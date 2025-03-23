@@ -1,26 +1,35 @@
-import partnerImage from '/assets/partner.jpg';
+import partnerImage from '/assets/partner.webp';
 
 const Partner = () => {
   return (
     <section
       className=''
       style={{
-        background: 'linear-gradient(135deg, #334155, #1e293b, #0f172a)',
-        padding: '2rem',
+        background:
+          'linear-gradient(135deg,rgb(83, 69, 53),rgb(79, 58, 38),rgb(37, 22, 9))',
+        padding: '1rem',
       }}
     >
       <div className='container py-5'>
         <div className='row align-items-center'>
-          <div className='col-lg-6 text-center text-lg-start'>
-            <h2 className='fw-bold text-white mb-2'>
-              Why <span style={{ color: '#f16921' }}>Partner</span> with Us?
+          <div className='col-lg-6 text-lg-start'>
+            <h2 className='fw-bold fs-2 text-white mb-2'>
+              <span style={{ color: '#f16921' }}>Work</span> with us.
             </h2>
-            <p className='mb-2 text-white'>
-              Inno Tech is dedicated to providing the best medical equipment for
-              cutting-edge research and healthcare solutions. best medical
-              equipment for cutting-edge research and healthcare solutions. and
-              healthcare solutions. best medical equipment for cutting-edge
-              research and healthcare solutions.
+            <p
+              className='mb-2 text-white lh-lg'
+              style={{
+                fontSize: '17px',
+                letterSpacing: '0.2px',
+                lineHeight: '1.8',
+              }}
+            >
+              InnoTech Technologies is committed to delivering top-quality
+              laboratory equipment tailored to diverse scientific needs. We
+              prioritize innovation, precision, and exceptional customer
+              satisfaction, ensuring reliable solutions for all research
+              environments. Our expertise and dedication make us a trusted
+              partner for laboratories worldwide.
             </p>
             <a
               href='#contact'
@@ -39,7 +48,8 @@ const Partner = () => {
             <img
               src={partnerImage}
               alt='About Us'
-              style={{ maxWidth: '400px', borderRadius: '12px' }}
+              className='img-fluid mt-5 mt-lg-0'
+              style={{ maxWidth: '90%', height: 'auto', borderRadius: '14px' }}
             />
           </div>
         </div>

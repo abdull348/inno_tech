@@ -1,51 +1,85 @@
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import innotech from '/assets/nav-logo.svg';
-const Navbar = () => {
+
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (path) => {
+    if (isOpen) setIsOpen(false);
+
+    if (path.startsWith('#')) {
+      const sectionId = path.substring(1);
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(path);
+    }
+  };
+
+  const navbarData = [
+    { title: 'About', path: '#about' },
+    { title: 'Products', path: '/product' },
+    { title: 'Services', path: '#services' },
+    { title: 'Contact Us', path: '#contact' },
+  ];
+
   return (
-    <header id='header' className='header-space'>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white shadow-sm'>
-        <div className='container pt-0 pb-0'>
-          <a className='navbar-brand' href='/' aria-label='tailus logo'>
-            <img src={innotech} alt='Logo' width={160} height={60} />
-          </a>
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarNav'
-            aria-controls='navbarNav'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          <div className='collapse navbar-collapse' id='navbarNav'>
-            <ul className='navbar-nav ms-auto'>
-              <li className='nav-item'>
-                <a className='nav-link ms-4' href='#about'>
-                  About
-                </a>
+    <nav
+      className='navbar navbar-expand-lg navbar-light bg-light'
+      style={{ position: 'relative', zIndex: 1, padding: '0rem' }}
+    >
+      <div className='container'>
+        <Link to='/' className='navbar-brand d-flex align-items-center'>
+          <img src={innotech} alt='Logo' width={130} height={50} />
+        </Link>
+        <button
+          className='navbar-toggler'
+          type='button'
+          onClick={handleToggle}
+          aria-expanded={isOpen}
+          aria-label='Toggle navigation'
+        >
+          ☰<span className={isOpen ? 'icon-cross' : 'icon-bars'}></span>
+        </button>
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
+          <ul className='navbar-nav ms-auto'>
+            {navbarData.map((item, index) => (
+              <li className='nav-item' key={index}>
+                {item.external ? (
+                  <Link
+                    to={item.path}
+                    className='nav-link mx-2 px-3 highlight'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    onClick={handleLinkClick}
+                  >
+                    {item.title}
+                  </Link>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className='nav-link mx-2 px-3'
+                    onClick={handleLinkClick}
+                  >
+                    {item.title}
+                  </Link>
+                )}
               </li>
-              <li className='nav-item'>
-                <a className='nav-link ms-4' href='#products'>
-                  Products
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link ms-4' href='#services'>
-                  Services
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link ms-4 btn btn-contact' href='#contact'>
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
-};
+}
 
 export default Navbar;
