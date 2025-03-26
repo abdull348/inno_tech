@@ -1,112 +1,168 @@
-import { HiMail } from 'react-icons/hi';
-import { TbPhoneCall } from 'react-icons/tb';
+import {
+  HiMail,
+  HiOutlineLocationMarker,
+  HiOutlinePhone,
+} from 'react-icons/hi';
+import { FaLinkedin, FaTwitter, FaFacebookF } from 'react-icons/fa';
 import usa from '/assets/us.svg';
 import logo from '/assets/footer-logo.svg';
+import { Link } from 'react-router-dom';
 
 function Footer() {
-  const footerInfo = [
+  const footerLinks = [
     {
-      icon: (
-        <img
-          src={usa}
-          alt='USA Flag'
-          style={{ width: '28px', height: 'auto' }}
-          className='fs-1 me-1'
-        />
-      ),
-      title: (
-        <p className='text-white mb-0' style={{ fontSize: '14px' }}>
-          Address
-        </p>
-      ),
-      content: <p className='m-0 text-white'>Lenexa, KS 66215, USA</p>,
+      title: 'Products',
+      links: [
+        { name: 'Laboratory Equipment', url: '/' },
+        { name: 'Medical Devices', url: '/' },
+        { name: 'Industrial Instruments', url: '/' },
+        { name: 'New Arrivals', url: '/' },
+      ],
     },
     {
-      icon: <HiMail className='text-white fs-3 me-1' />,
-      title: (
-        <p className='text-white mb-0' style={{ fontSize: '14px' }}>
-          Email us
-        </p>
-      ),
-      content: (
-        <>
-          <a
-            href='mailto:info@innotechtechnologies.us'
-            className='text-white text-decoration-none d-block'
-            style={{ fontWeight: '400', fontSize: '16px' }}
-          >
-            info@innotechtechnologies.us
-          </a>
-          <a
-            href='mailto:sales@innotechtechnologies.us'
-            className='text-white text-decoration-none d-block'
-            style={{ fontWeight: '400', fontSize: '16px' }}
-          >
-            sales@innotechtechnologies.us
-          </a>
-        </>
-      ),
+      title: 'Company',
+      links: [
+        { name: 'About Us', url: '/about' },
+        { name: 'Featured Products', url: '/products' },
+        { name: 'Services', url: '/service' },
+        { name: 'Careers', url: '/careers' },
+      ],
     },
     {
-      icon: <TbPhoneCall className='text-white fs-3 me-1' />,
-      title: (
-        <p className='text-white mb-0' style={{ fontSize: '14px' }}>
-          Call us
-        </p>
-      ),
-      content: <p className='m-0 text-white'>+1 (818) 943-1786</p>,
+      title: 'Resources',
+      links: [
+        { name: 'Technical Documents', url: '/' },
+        { name: 'Product Manuals', url: '/' },
+        { name: 'Safety Standards', url: '/' },
+        { name: 'FAQ', url: '/' },
+      ],
     },
   ];
 
   return (
-    <footer
-      style={{
-        position: 'relative',
-        background: 'linear-gradient(315deg, #334155, #1e293b, #0f172a)',
-        paddingTop: '85px',
-        paddingBottom: '20px',
-      }}
-    >
+    <footer className='bg-dark text-white pt-5 pb-4'>
       <div className='container'>
-        <div className='row text-center text-md-start'>
-          <div className='col-12 col-md-3 d-flex justify-content-center justify-content-md-start mb-4 mb-md-0'>
-            <a className='navbar-brand' href='/'>
+        <div className='row g-4'>
+          <div className='col-lg-4'>
+            <Link to='/' className='d-inline-block mb-4'>
               <img
                 src={logo}
-                alt='Logo'
-                className='img-fluid'
-                style={{ maxWidth: '160px', maxHeight: '60px' }}
+                alt='InnoTech Technologies'
+                style={{ width: '180px', height: 'auto' }}
               />
-            </a>
+            </Link>
+            <p className='small text-white-50 mb-4'>
+              Leading supplier of precision laboratory equipment for research,
+              healthcare, and industrial applications since 2005.
+            </p>
+
+            <div className='d-flex gap-3 mb-4'>
+              <a href='#' className='text-white-50 hover-primary'>
+                <FaLinkedin size={22} />
+              </a>
+              <a href='#' className='text-white-50 hover-primary'>
+                <FaTwitter size={22} />
+              </a>
+              <a href='#' className='text-white-50 hover-primary'>
+                <FaFacebookF size={22} />
+              </a>
+            </div>
           </div>
 
-          {footerInfo.map((info, index) => (
-            <div
-              className='col-12 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start mb-4 mb-md-0'
-              key={index}
-            >
-              {info.icon}
-              <div className='ms-2'>
-                <p className='mb-1'>{info.title}</p>
-                {info.content}
-              </div>
+          {footerLinks.map((section, index) => (
+            <div key={index} className='col-lg-2 col-md-4'>
+              <h5 className='h6 mb-3 text-white'>{section.title}</h5>
+              <ul className='list-unstyled'>
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex} className='mb-2'>
+                    <Link
+                      to={link.url}
+                      className='text-white-50 small text-decoration-none hover-primary'
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+
+          <div className='col-lg-4 col-md-6'>
+            <h5 className='h6 mb-3 text-white'>Contact Information</h5>
+            <div className='d-flex mb-3'>
+              <div className='me-3 text-primary'>
+                <HiOutlineLocationMarker size={20} />
+              </div>
+              <div>
+                <p className='mb-0 small text-white'>Lenexa, KS 66215, USA</p>
+                <div className='d-flex align-items-center mt-1'>
+                  <img src={usa} alt='USA' width='20' className='me-2' />
+                  <span className='small text-white-50'>Headquarters</span>
+                </div>
+              </div>
+            </div>
+
+            <div className='d-flex mb-3'>
+              <div className='me-3 text-primary'>
+                <HiMail size={20} />
+              </div>
+              <div>
+                <a
+                  href='mailto:info@innotechtechnologies.us'
+                  className='small text-white-50 d-block text-decoration-none hover-primary'
+                >
+                  info@innotechtechnologies.us
+                </a>
+                <a
+                  href='mailto:sales@innotechtechnologies.us'
+                  className='small text-white-50 d-block text-decoration-none hover-primary'
+                >
+                  sales@innotechtechnologies.us
+                </a>
+              </div>
+            </div>
+
+            <div className='d-flex'>
+              <div className='me-3 text-primary'>
+                <HiOutlinePhone size={20} />
+              </div>
+              <div>
+                <a
+                  href='tel:+18189431786'
+                  className='small text-white-50 text-decoration-none hover-primary'
+                >
+                  +1 (818) 943-1786
+                </a>
+                <p className='small text-white-50 mb-0 mt-1'>
+                  Mon-Fri: 8AM - 6PM EST
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <hr className='mt-5 mb-4 text-white' />
+        <hr className='my-4 border-secondary' />
 
-        <div className='row d-flex justify-content-between align-items-center'>
-          <div className='col-auto'>
-            <p className='mb-1 text-white' style={{ fontSize: '14px' }}>
-              Privacy Policy<span style={{ margin: '0 10px' }}>|</span>Terms &
-              Conditions
+        <div className='row align-items-center'>
+          <div className='col-md-6 mb-3 mb-md-0'>
+            <p className='small text-white-50 mb-0'>
+              © {new Date().getFullYear()} InnoTech Technologies. All rights
+              reserved.
             </p>
           </div>
-          <div className='col-auto'>
-            <p className='mb-1 text-white' style={{ fontSize: '14px' }}>
-              © 2025 Inno Tech.
-            </p>
+          <div className='col-md-6 text-md-end'>
+            <Link
+              to='/'
+              className='small text-white-50 text-decoration-none me-3 hover-primary'
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to='/'
+              className='small text-white-50 text-decoration-none me-3 hover-primary'
+            >
+              Terms & Conditions
+            </Link>
           </div>
         </div>
       </div>

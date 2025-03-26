@@ -3,11 +3,12 @@ const products = [
     id: 1,
     name: 'Micro Centrifuge MC-20R',
     image: '/assets/inno-MC20R.png',
-    description: `innoTECH offer a cost efficient high speed and versatile refrigerated centrifuge. Microprocessor control, touch panel, data can be savedautomatically, RCF value can be set up directly, durable and easy to use. Brushless converter motor which has high torque andmaintenance free. Multistage damping system, Freon free compressor, low noise, stainless steel centrifugal chamber.
-Over speed, over temperature, door interlock, imbalance protection, ensures safety. Pre-cooling design for chamber, fast cooling, highefficiency. Can be configured 0.5ml, 1.5ml, 2ml, 5ml, 10ml, 15ml, 50ml and several kinds of adapters, meet different customer’s needs.`,
+    description: `innoTECH offer a cost efficient high speed and versatile refrigerated centrifuge. Microprocessor control, touch panel, data can be saved automatically, RCF value can be set up directly, durable and easy to use. Brushless converter motor which has high torque and maintenance free. Multistage damping system, Freon free compressor, low noise, stainless steel centrifugal chamber.
+<br />Over speed, over temperature, door interlock, imbalance protection, ensures safety. Pre-cooling design for chamber, fast cooling, high efficiency. Can be configured 0.5ml, 1.5ml, 2ml, 5ml, 10ml, 15ml, 50ml and several kinds of adapters, meet different customer's needs.`,
     specs: {
       Model: 'inno-MC-20R',
       Speed: '20000 RPM',
+      RCF: '27800 x g',
       Capacity: '4 x 100 ml',
       'Temperature Range': '-20°C to 40°C',
       Dimensions: '610 x 500 x 350',
@@ -24,7 +25,7 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
     specs: {
       Model: 'inno-MC-15',
       Speed: '15000 RPM',
-      Capacity: '12×1.5/2.0ml',
+      Capacity: '12 × 1.5 / 2.0 ml',
       'Temperature Range': '-20°C to 40°C',
       Dimensions: '252 x 190 x 140',
     },
@@ -133,7 +134,7 @@ research ins tutes and other organiza ons.`,
   },
   {
     id: 8,
-    name: 'Benchtop pH/Conductivity/DO Meter PCD50',
+    name: 'Benchtop pH Conductivity DO Meter PCD50',
     image: '/assets/conductivity-meter.png',
     description: `6.5-inch LED screen. It supports wireless Bluetooth prin ng. Auto 
 recogni on of 8 conduc vity standard and 25 buffers. Can store 999 

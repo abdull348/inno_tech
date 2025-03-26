@@ -1,93 +1,127 @@
 import Hero1 from '/assets/Hero1.webp';
 import Hero2 from '/assets/Hero2.webp';
 import Hero3 from '/assets/Hero3.webp';
+import Hero4 from '/assets/Hero4.webp';
+import { UserRound, Download, Award } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div
-      className='container-fluid position-relative bg-light text-dark text-center p-0'
+    <section
+      className='container-fluid position-relative'
       style={{ height: '90vh', overflow: 'hidden' }}
     >
       <div
-        id='backgroundCarousel'
-        className='carousel slide position-absolute top-0 start-0 w-100 h-80  d-none d-md-block'
+        id='labCarousel'
+        className='carousel slide position-absolute top-0 start-0 w-100 h-80 d-none d-md-block'
         data-bs-ride='carousel'
-        data-bs-interval='4000'
+        data-bs-interval='3500'
         style={{ zIndex: 0 }}
       >
-        <div className='carousel-inner position-relative'>
-          <div className='carousel-item' style={{ top: 0, left: 0 }}>
-            <img
-              src={Hero1}
-              className='d-block w-100 h-100'
-              alt='Biology Tech 1'
-              style={{ opacity: '0.4', objectFit: 'cover' }}
-            />
-          </div>
-          <div className='carousel-item' style={{ top: 0, left: 0 }}>
-            <img
-              src={Hero2}
-              className='d-block w-100 h-100'
-              alt='Biology Tech 2'
-              style={{ opacity: '0.4', objectFit: 'cover' }}
-            />
-          </div>
-          <div className='carousel-item active' style={{ top: 0, left: 0 }}>
-            <img
-              src={Hero3}
-              className='d-block w-100 h-100'
-              alt='Biology Tech 3'
-              style={{ opacity: '0.4', objectFit: 'cover' }}
-            />
-          </div>
+        <div className='carousel-inner h-100'>
+          {[Hero1, Hero2, Hero3, Hero4].map((img, index) => (
+            <div
+              key={index}
+              className={`carousel-item h-100 ${index === 2 ? 'active' : ''}`}
+            >
+              <img
+                src={img}
+                className='d-block w-100 h-100'
+                alt={`Laboratory Equipment ${index + 1}`}
+                style={{
+                  objectFit: 'cover',
+                  filter: 'brightness(0.4)',
+                  objectPosition: 'center 30%',
+                }}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className='position-relative d-flex flex-column justify-content-center align-items-center w-100 h-100 p-3 p-lg-0'>
-        <div className='col-lg-8'>
-          <h1 className='display-4 fw-bold mb-3'>
-            Innovating the Future of Laboratory Science
+      <div className='position-absolute top-0 start-0 w-100 h-100 d-md-none bg-light' />
+      <div className='position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center px-3'>
+        <div className='col-lg-8 col-xl-7'>
+          <div className='d-flex justify-content-center mb-3'>
+            <span className='badge bg-white bg-md-dark text-dark text-md-white fs-6 fw-normal px-3 py-2 rounded-pill d-flex align-items-center d-none d-md-block'>
+              <Award size={18} className='me-2' />
+              Lab Technology Innovator Since 2005
+            </span>
+          </div>
+
+          <h1 className='display-3 fw-bold mb-3 hero-tagline'>
+            Precision <span className='text-primary'>Laboratory Solutions</span>{' '}
+            for <br className='d-none d-md-block' />
+            Critical Research
           </h1>
-          <p className='lead mb-2 mb-lg-4 fw-semibold'>
-            Explore cutting-edge solutions bridging technology with life
-            sciences, <br />
-            enhancing research precision and efficiency.
+
+          <p className='lead mb-4 fs-5 hero-description'>
+            Trusted by 500+ institutions worldwide for uncompromising quality in{' '}
+            <br />
+            medical diagnostics, pharmaceutical research, and biotech innovation
           </p>
-          <div className='position-relative'>
+
+          <div className='d-flex flex-wrap justify-content-center gap-3'>
             <a
               href='#contact'
-              className='btn btn-contact'
-              style={{
-                border: '2px solid #1a1a1a',
-                fontWeight: '600',
-                borderRadius: '4px',
-              }}
+              className='btn btn-primary btn-lg px-2 py-2 fw-semibold d-flex align-items-center'
+              style={{ fontSize: '18px' }}
             >
-              Consult Now
+              <UserRound className='me-2' size={16} />
+              Request Technical Consultation
+            </a>
+            <a
+              href='/catalog.pdf'
+              className='btn btn-outline-light btn-lg px-2 py-2 fw-semibold d-flex align-items-center'
+              style={{ fontSize: '18px' }}
+              download
+            >
+              <Download className='me-2' size={16} />
+              Download Full Catalog
             </a>
           </div>
         </div>
 
-        <div className='carousel-indicators position-absolute bottom-0 mb-4 d-none d-md-block'>
-          <button
-            type='button'
-            data-bs-target='#backgroundCarousel'
-            data-bs-slide-to='0'
-            className='active'
-          ></button>
-          <button
-            type='button'
-            data-bs-target='#backgroundCarousel'
-            data-bs-slide-to='1'
-          ></button>
-          <button
-            type='button'
-            data-bs-target='#backgroundCarousel'
-            data-bs-slide-to='2'
-          ></button>
+        <div className='position-absolute bottom-0 mb-5 w-100 d-none d-md-block'>
+          <div className='container'>
+            <div className='row justify-content-center g-3'>
+              <div className='col-auto'>
+                <div className='text-white-50 d-flex align-items-center'>
+                  <span className='text-white fw-semibold me-2'>7,000+</span>
+                  Equipment Installed
+                </div>
+              </div>
+              <div className='col-auto'>
+                <div className='text-white-50 d-flex align-items-center'>
+                  <span className='text-white fw-semibold me-2'>24/7</span>
+                  Technical Support
+                </div>
+              </div>
+              <div className='col-auto'>
+                <div className='text-white-50 d-flex align-items-center'>
+                  <span className='text-white fw-semibold me-2'>98%</span>
+                  Client Retention
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className='position-absolute bottom-0 start-50 translate-middle-x mb-3 d-none d-md-block'>
+        <div className='carousel-indicators'>
+          {[0, 1, 2, 3].map((i) => (
+            <button
+              key={i}
+              type='button'
+              data-bs-target='#labCarousel'
+              data-bs-slide-to={i}
+              className={i === 2 ? 'active' : ''}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

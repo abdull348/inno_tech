@@ -1,56 +1,97 @@
 import partnerImage from '/assets/partner.webp';
+import { ArrowUpRight, Handshake, ShieldCheck, Globe } from 'lucide-react';
 
 const Partner = () => {
+  const partnerBenefits = [
+    {
+      icon: <ShieldCheck size={20} />,
+      text: 'Certified equipment with full documentation',
+    },
+    {
+      icon: <Globe size={20} />,
+      text: 'Global logistics network with 48h emergency dispatch',
+    },
+  ];
+
   return (
-    <section
-      className=''
-      style={{
-        background:
-          'linear-gradient(135deg,rgb(83, 69, 53),rgb(79, 58, 38),rgb(37, 22, 9))',
-        padding: '1rem',
-      }}
-    >
-      <div className='container py-5'>
-        <div className='row align-items-center'>
-          <div className='col-lg-6 text-lg-start'>
-            <h2 className='fw-bold fs-2 text-white mb-2'>
-              <span style={{ color: '#f16921' }}>Work</span> with us.
-            </h2>
-            <p
-              className='mb-2 text-white lh-lg'
-              style={{
-                fontSize: '17px',
-                letterSpacing: '0.2px',
-                lineHeight: '1.8',
-              }}
-            >
-              InnoTech Technologies is committed to delivering top-quality
-              laboratory equipment tailored to diverse scientific needs. We
-              prioritize innovation, precision, and exceptional customer
-              satisfaction, ensuring reliable solutions for all research
-              environments. Our expertise and dedication make us a trusted
-              partner for laboratories worldwide.
-            </p>
-            <a
-              href='#contact'
-              className='btn btn-contact mt-2'
-              style={{
-                border: '1px solid #fff',
-                color: '#fff',
-                fontWeight: '600',
-                borderRadius: '4px',
-              }}
-            >
-              Get to Quote
-            </a>
+    <section className='py-5 bg-white' id='partnership'>
+      <div className='container py-4 py-lg-5'>
+        <div className='row align-items-center g-5'>
+          <div className='col-lg-6 order-lg-1 p-4 p-lg-5 mx-auto'>
+            <div className='position-relative'>
+              <img
+                src={partnerImage}
+                alt='Laboratory Partnership'
+                className='img-fluid rounded-3 shadow-lg mx-auto'
+                style={{
+                  maxWidth: '90%',
+                  height: 'auto',
+                }}
+              />
+              <div className='position-absolute bottom-0 start-0 bg-white p-3 m-3 rounded-2 shadow-sm'>
+                <div className='d-flex align-items-center'>
+                  <div
+                    className='bg-primary text-white rounded-circle p-2 d-flex align-items-center justify-content-center'
+                    style={{ width: '40px', height: '40px' }}
+                  >
+                    <Handshake size={20} />
+                  </div>
+                  <div className='ms-2'>
+                    <h6 className='mb-0'>150+ Partners</h6>
+                    <small className='text-muted'>Worldwide network</small>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className='col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center'>
-            <img
-              src={partnerImage}
-              alt='About Us'
-              className='img-fluid mt-5 mt-lg-0'
-              style={{ maxWidth: '90%', height: 'auto', borderRadius: '14px' }}
-            />
+
+          <div className='col-lg-6 p-4 p-lg-5'>
+            <div className='pe-lg-4'>
+              <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 d-inline-flex align-items-center'>
+                <Handshake size={16} className='me-2' />
+                Strategic Partnerships
+              </span>
+              <h2 className='display-5 fw-bold mb-4'>
+                Elevate Your Lab with Trusted Partnerships
+              </h2>
+
+              <p className='lead text-muted mb-4'>
+                Join our network of 500+ scientific institutions benefiting from
+                our reliable supply chain and technical expertise in laboratory
+                solutions.
+              </p>
+
+              <div className='mb-4'>
+                {partnerBenefits.map((benefit, index) => (
+                  <div key={index} className='d-flex align-items-center mb-3'>
+                    <div
+                      className='bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center'
+                      style={{ width: '40px', height: '40px' }}
+                    >
+                      {benefit.icon}
+                    </div>
+                    <p className='mb-0 fw-medium'>{benefit.text}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className='d-flex flex-wrap gap-3 mt-4'>
+                <a
+                  href='#contact'
+                  className='btn btn-primary px-4 py-2 d-flex align-items-center'
+                >
+                  Become a Partner <ArrowUpRight className='ms-2' size={18} />
+                </a>
+                <a
+                  href='/partnership-brochure.pdf'
+                  className='btn btn-outline-primary px-4 py-2 d-flex align-items-center'
+                  download
+                >
+                  Download Partnership Kit{' '}
+                  <ArrowUpRight className='ms-2' size={18} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,112 +1,119 @@
-function ContactUs() {
-  const formFields = [
-    {
-      id: 'name',
-      label: 'Your Name',
-      type: 'text',
-      placeholder: 'Name',
-    },
-    {
-      id: 'email',
-      label: 'Your Email',
-      type: 'email',
-      placeholder: 'Email',
-    },
-    {
-      id: 'message',
-      label: 'Message',
-      type: 'textarea',
-      placeholder: `Tell us what's on your mind...`,
-      rows: 4,
-      colSize: 12,
-    },
-  ];
+import { Send } from 'lucide-react';
 
+function ContactUs() {
   return (
-    <div className='container section-wrapper' id='contact'>
-      <div className='row align-items-center py-5'>
-        <div className='col-12 col-lg-6 mb-lg-0 p-4 p-lg-2'>
-          <h2 className='fw-bold fs-2 mb-2'>
-            Get In <span style={{ color: '#f16921' }}>Touch!</span>
+    <section className='py-5 bg-light' id='contact'>
+      <div className='container py-4 py-lg-5'>
+        <div className='text-center mb-5'>
+          <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
+            Get In Touch
+          </span>
+          <h2 className='display-5 fw-bold mb-3'>
+            <span className='text-primary'>Contact</span> Our Technical Team
           </h2>
-          <p
-            className='mt-2 lh-lg'
-            style={{
-              fontSize: '18px',
-              letterSpacing: '0.2px',
-              lineHeight: '1.6',
-            }}
-          >
-            Need to get in touch with us? Either fill out the form with your
-            inquiry or <br />
-            find the{' '}
-            <a
-              href='mailto:info@innotechtechnologies.us'
-              style={{
-                fontWeight: '500',
-                color: '#045cb4',
-                textDecoration: 'none',
-              }}
-            >
-              official email
-            </a>{' '}
-            you&apos;d like to contact below.
+          <p className='lead text-muted mx-auto' style={{ maxWidth: '700px' }}>
+            Have questions about our laboratory equipment? Our specialists are
+            ready to assist with technical specifications, quotes, and support.
           </p>
         </div>
 
-        <div className='col-12 col-lg-6 p-4 p-lg-5'>
-          <div
-            className='card shadow-sm border rounded-3'
-            data-aos='zoom-in'
-            data-aos-duration='2000'
-          >
-            <div className='card-body'>
-              <form noValidate>
-                <div className='row p-3'>
-                  {formFields.map((field) => (
-                    <div
-                      key={field.id}
-                      className={`col-12 col-md-${field.colSize || 6} mb-3`}
-                    >
-                      <label
-                        htmlFor={field.id}
-                        className='form-label'
-                        style={{ fontWeight: '400' }}
-                      >
-                        {field.label}
+        <div className='row g-4 justify-content-center'>
+          <div className='col-lg-10'>
+            <div className='card border-0 shadow-sm h-100'>
+              <div className='card-body p-4 p-lg-5'>
+                <h3 className='h5 fw-bold mb-4'>Send Us a Message</h3>
+                <form>
+                  <div className='row g-3'>
+                    <div className='col-md-6'>
+                      <label htmlFor='name' className='form-label fw-medium'>
+                        Your Name
                       </label>
-                      {field.type === 'textarea' ? (
-                        <textarea
-                          id={field.id}
-                          className='form-control'
-                          placeholder={field.placeholder}
-                          rows={field.rows || 4}
-                          required
-                        />
-                      ) : (
-                        <input
-                          id={field.id}
-                          type={field.type}
-                          className='form-control'
-                          placeholder={field.placeholder}
-                          required
-                        />
-                      )}
+                      <input
+                        type='text'
+                        className='form-control'
+                        id='name'
+                        placeholder='Dr. John Smith'
+                        required
+                      />
                     </div>
-                  ))}
-                </div>
-
-                <div className='mt-3 px-3'>
-                  <button type='submit' className='about-button w-100'>
-                    Send Message
-                  </button>
-                </div>
-              </form>
+                    <div className='col-md-6'>
+                      <label htmlFor='email' className='form-label fw-medium'>
+                        Email Address
+                      </label>
+                      <input
+                        type='email'
+                        className='form-control'
+                        id='email'
+                        placeholder='john.smith@lab.edu'
+                        required
+                      />
+                    </div>
+                    <div className='col-md-6'>
+                      <label
+                        htmlFor='institution'
+                        className='form-label fw-medium'
+                      >
+                        Institution/Company
+                      </label>
+                      <input
+                        type='text'
+                        className='form-control'
+                        id='institution'
+                        placeholder='Boston Research Institute'
+                      />
+                    </div>
+                    <div className='col-md-6'>
+                      <label htmlFor='phone' className='form-label fw-medium'>
+                        Phone Number
+                      </label>
+                      <input
+                        type='tel'
+                        className='form-control'
+                        id='phone'
+                        placeholder='+1 (123) 456-7890'
+                      />
+                    </div>
+                    <div className='col-12'>
+                      <label htmlFor='subject' className='form-label fw-medium'>
+                        Subject
+                      </label>
+                      <select className='form-select' id='subject' required>
+                        <option value=''>Select inquiry type</option>
+                        <option>Equipment Inquiry</option>
+                        <option>Technical Support</option>
+                        <option>Partnership Opportunity</option>
+                        <option>Service Request</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                    <div className='col-12'>
+                      <label htmlFor='message' className='form-label fw-medium'>
+                        Message
+                      </label>
+                      <textarea
+                        className='form-control'
+                        id='message'
+                        rows='5'
+                        placeholder='Please include equipment model numbers and specifications if applicable...'
+                        required
+                      ></textarea>
+                    </div>
+                    <div className='col-12 mt-3'>
+                      <button
+                        type='submit'
+                        className='btn btn-primary px-4 py-2 d-flex align-items-center ms-auto'
+                      >
+                        Send Message <Send className='ms-2' size={18} />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
