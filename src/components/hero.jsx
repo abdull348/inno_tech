@@ -1,8 +1,9 @@
+import { UserRound, Download, Award } from 'lucide-react';
 import Hero1 from '/assets/Hero1.webp';
 import Hero2 from '/assets/Hero2.webp';
 import Hero3 from '/assets/Hero3.webp';
 import Hero4 from '/assets/Hero4.webp';
-import { UserRound, Download, Award } from 'lucide-react';
+import AnimatedText from './animatedText';
 
 const Hero = () => {
   return (
@@ -42,10 +43,12 @@ const Hero = () => {
       <div className='position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center px-3'>
         <div className='col-lg-8 col-xl-7'>
           <div className='d-flex justify-content-center mb-3'>
-            <span className='badge bg-white bg-md-dark text-dark text-md-white fs-6 fw-normal px-3 py-2 rounded-pill d-flex align-items-center d-none d-md-block'>
-              <Award size={18} className='me-2' />
-              Lab Technology Innovator Since 2005
-            </span>
+            <AnimatedText>
+              <span className='badge bg-white bg-md-dark text-dark text-md-white fs-6 fw-normal px-3 py-2 rounded-pill d-flex align-items-center d-none d-md-block'>
+                <Award size={18} className='me-2' />
+                Lab Technology Innovator Since 2014
+              </span>
+            </AnimatedText>
           </div>
 
           <h1 className='display-3 fw-bold mb-3 hero-tagline'>
@@ -71,38 +74,13 @@ const Hero = () => {
             </a>
             <a
               href='/catalog.pdf'
-              className='btn btn-outline-light btn-lg px-2 py-2 fw-semibold d-flex align-items-center'
+              className='btn btn-outline-light btn-lg px-2 py-2 fw-semibold d-flex align-items-center d-none d-md-block'
               style={{ fontSize: '18px' }}
               download
             >
               <Download className='me-2' size={16} />
               Download Full Catalog
             </a>
-          </div>
-        </div>
-
-        <div className='position-absolute bottom-0 mb-5 w-100 d-none d-md-block'>
-          <div className='container'>
-            <div className='row justify-content-center g-3'>
-              <div className='col-auto'>
-                <div className='text-white-50 d-flex align-items-center'>
-                  <span className='text-white fw-semibold me-2'>7,000+</span>
-                  Equipment Installed
-                </div>
-              </div>
-              <div className='col-auto'>
-                <div className='text-white-50 d-flex align-items-center'>
-                  <span className='text-white fw-semibold me-2'>24/7</span>
-                  Technical Support
-                </div>
-              </div>
-              <div className='col-auto'>
-                <div className='text-white-50 d-flex align-items-center'>
-                  <span className='text-white fw-semibold me-2'>98%</span>
-                  Client Retention
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

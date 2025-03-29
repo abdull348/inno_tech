@@ -1,14 +1,10 @@
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
-import ProductListing from '../components/Products';
-import ContactUs from '../components/contact';
 import { ShieldCheck, Truck, LifeBuoy } from 'lucide-react';
+import ProductListing from '../components/Products';
 import '../index.css';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <main className='bg-white'>
         <section className='py-3 bg-primary text-white'>
           <div className='container py-4 py-lg-5'>
@@ -68,14 +64,7 @@ const Home = () => {
             <ProductListing />
           </div>
         </section>
-
-        <section className='py-5 bg-light' id='contact'>
-          <div className='container py-5'>
-            <ContactUs />
-          </div>
-        </section>
       </main>
-      <Footer />
     </>
   );
 };

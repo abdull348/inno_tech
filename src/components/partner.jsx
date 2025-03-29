@@ -1,5 +1,6 @@
-import partnerImage from '/assets/partner.webp';
 import { ArrowUpRight, Handshake, ShieldCheck, Globe } from 'lucide-react';
+import partnerImage from '/assets/partner.webp';
+import AnimatedText from './animatedText';
 
 const Partner = () => {
   const partnerBenefits = [
@@ -16,7 +17,7 @@ const Partner = () => {
   return (
     <section className='py-5 bg-white' id='partnership'>
       <div className='container py-4 py-lg-5'>
-        <div className='row align-items-center g-5'>
+        <div className='row align-items-center'>
           <div className='col-lg-6 order-lg-1 p-4 p-lg-5 mx-auto'>
             <div className='position-relative'>
               <img
@@ -47,10 +48,12 @@ const Partner = () => {
 
           <div className='col-lg-6 p-4 p-lg-5'>
             <div className='pe-lg-4'>
-              <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 d-inline-flex align-items-center'>
-                <Handshake size={16} className='me-2' />
-                Strategic Partnerships
-              </span>
+              <AnimatedText>
+                <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 d-inline-flex align-items-center'>
+                  <Handshake size={16} className='me-2' />
+                  Strategic Partnerships
+                </span>
+              </AnimatedText>
               <h2 className='display-5 fw-bold mb-4'>
                 Elevate Your Lab with Trusted Partnerships
               </h2>
@@ -74,7 +77,6 @@ const Partner = () => {
                   </div>
                 ))}
               </div>
-
               <div className='d-flex flex-wrap gap-3 mt-4'>
                 <a
                   href='#contact'

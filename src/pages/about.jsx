@@ -8,22 +8,19 @@ import {
   Star,
   User,
 } from 'lucide-react';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
-import ContactUs from '../components/contact';
-import aboutlab from '/assets/about-lab.jpg';
+import aboutlab from '/assets/about-lab.webp';
+import AnimatedText from '../components/animatedText';
 
 const AboutUs = () => {
   return (
     <>
-      <Navbar />
       <section className='py-3 bg-primary text-white'>
         <div className='container py-4 py-lg-5'>
           <div className='row align-items-center'>
             <div className='col-lg-6'>
               <h1 className='display-4 fw-bold mb-4'>
                 Advancing Science Since{' '}
-                <span className='text-warning'>2005</span>
+                <span className='text-warning'>2014</span>
               </h1>
               <p className='lead mb-4'>
                 InnoTech Technologies has been at the forefront of laboratory
@@ -35,7 +32,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className='py-5 bg-white'>
+      <section className='py-5 bg-light'>
         <div className='container py-5'>
           <div className='text-center mb-5'>
             <h2 className='display-5 fw-bold mb-3'>Our Core Principles</h2>
@@ -46,7 +43,6 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-
           <div className='row g-4'>
             {[
               {
@@ -89,7 +85,7 @@ const AboutUs = () => {
               </h2>
               <ul className='list-unstyled'>
                 {[
-                  '15+ years specializing in precision instruments',
+                  '10+ years specializing in precision instruments',
                   'In-house R&D team developing cutting-edge technology',
                   'Dedicated calibration and validation specialists',
                   'OEM partnerships with leading manufacturers',
@@ -129,12 +125,16 @@ const AboutUs = () => {
                 experience in laboratory instrumentation and quality control.
               </p>
               <div className='d-flex flex-wrap gap-3'>
-                <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
-                  12 Certified Technicians
-                </span>
-                <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
-                  24/7 Support Staff
-                </span>
+                <AnimatedText>
+                  <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
+                    12 Certified Technicians
+                  </span>
+                </AnimatedText>
+                <AnimatedText>
+                  <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
+                    24/7 Support Staff
+                  </span>
+                </AnimatedText>
               </div>
             </div>
 
@@ -276,12 +276,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      <section className='py-5 bg-light' id='contact'>
-        <div className='container py-5'>
-          <ContactUs />
-        </div>
-      </section>
-      <Footer />
     </>
   );
 };

@@ -1,5 +1,5 @@
-import AboutImage from '/assets/Choose-Us-Image.jpg';
 import { FlaskConical, ShieldCheck, Globe, BarChart } from 'lucide-react';
+import AboutImage from '/assets/choose-us.webp';
 
 const AboutUs = () => {
   const services = [
@@ -31,9 +31,9 @@ const AboutUs = () => {
   return (
     <section className='py-5 bg-light' id='about'>
       <div className='container py-4 py-lg-5'>
-        <div className='row align-items-center g-5'>
-          <div className='col-lg-6 p-4 p-lg-4'>
-            <div className='pe-lg-4'>
+        <div className='row align-items-center'>
+          <div className='col-lg-6 p-4 p-lg-5'>
+            <div className='pe-lg-0'>
               <h2 className='display-5 fw-bold mb-4'>
                 Scientific Solutions for Modern Laboratories
               </h2>
@@ -80,7 +80,7 @@ const AboutUs = () => {
                     </div>
                   </div>
                   <div>
-                    <h6 className='mb-0'>Since 2005</h6>
+                    <h6 className='mb-0'>Since 2014</h6>
                     <small className='text-muted'>
                       Advancing scientific discovery
                     </small>
