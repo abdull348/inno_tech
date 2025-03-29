@@ -1,13 +1,16 @@
 import { Send } from 'lucide-react';
+import AnimatedText from './animatedText';
 
 function ContactUs() {
   return (
     <section className='py-5 bg-light' id='contact'>
       <div className='container py-4 py-lg-5'>
         <div className='text-center mb-5'>
-          <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
-            Get In Touch
-          </span>
+          <AnimatedText>
+            <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
+              Get In Touch
+            </span>
+          </AnimatedText>
           <h2 className='display-5 fw-bold mb-3'>
             <span className='text-primary'>Contact</span> Our Technical Team
           </h2>

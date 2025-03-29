@@ -1,12 +1,8 @@
-import {
-  HiMail,
-  HiOutlineLocationMarker,
-  HiOutlinePhone,
-} from 'react-icons/hi';
-import { FaLinkedin, FaTwitter, FaFacebookF } from 'react-icons/fa';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import usa from '/assets/us.svg';
 import logo from '/assets/footer-logo.svg';
-import { Link } from 'react-router-dom';
 
 function Footer() {
   const footerLinks = [
@@ -24,7 +20,7 @@ function Footer() {
       links: [
         { name: 'About Us', url: '/about' },
         { name: 'Featured Products', url: '/products' },
-        { name: 'Services', url: '/service' },
+        { name: 'Services', url: '/services' },
         { name: 'Careers', url: '/careers' },
       ],
     },
@@ -53,18 +49,18 @@ function Footer() {
             </Link>
             <p className='small text-white-50 mb-4'>
               Leading supplier of precision laboratory equipment for research,
-              healthcare, and industrial applications since 2005.
+              healthcare, and industrial applications since 2014.
             </p>
 
             <div className='d-flex gap-3 mb-4'>
               <a href='#' className='text-white-50 hover-primary'>
-                <FaLinkedin size={22} />
+                <Linkedin size={22} />
               </a>
               <a href='#' className='text-white-50 hover-primary'>
-                <FaTwitter size={22} />
+                <Twitter size={22} />
               </a>
               <a href='#' className='text-white-50 hover-primary'>
-                <FaFacebookF size={22} />
+                <Facebook size={22} />
               </a>
             </div>
           </div>
@@ -91,7 +87,7 @@ function Footer() {
             <h5 className='h6 mb-3 text-white'>Contact Information</h5>
             <div className='d-flex mb-3'>
               <div className='me-3 text-primary'>
-                <HiOutlineLocationMarker size={20} />
+                <MapPin size={22} />
               </div>
               <div>
                 <p className='mb-0 small text-white'>Lenexa, KS 66215, USA</p>
@@ -104,7 +100,7 @@ function Footer() {
 
             <div className='d-flex mb-3'>
               <div className='me-3 text-primary'>
-                <HiMail size={20} />
+                <Mail size={22} />
               </div>
               <div>
                 <a
@@ -124,7 +120,7 @@ function Footer() {
 
             <div className='d-flex'>
               <div className='me-3 text-primary'>
-                <HiOutlinePhone size={20} />
+                <Phone size={22} />
               </div>
               <div>
                 <a

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, ChevronRight } from 'lucide-react';
 import products from '../productData.js';
+import AnimatedText from './animatedText.jsx';
 
 const ProductListing = () => {
   const navigate = useNavigate();
@@ -10,9 +11,15 @@ const ProductListing = () => {
       <div className='container py-4'>
         <div className='text-center mb-5'>
           <h2 className='display-5 fw-bold mb-3'>Laboratory Equipment</h2>
-          <p className='lead text-muted mx-auto' style={{ maxWidth: '700px' }}>
-            Certified instruments for research, diagnostics, and quality control
-          </p>
+          <AnimatedText>
+            <p
+              className='lead text-muted mx-auto'
+              style={{ maxWidth: '700px' }}
+            >
+              Certified instruments for research, diagnostics, and quality
+              control
+            </p>
+          </AnimatedText>
         </div>
 
         <div className='row g-4'>

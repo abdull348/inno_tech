@@ -7,10 +7,8 @@ import {
   LifeBuoy,
   Check,
 } from 'lucide-react';
-import Navbar from '../components/navbar';
-import ContactUs from '../components/contact';
-import Footer from '../components/footer';
-import labtechnician from '/assets/lab-technitian.jpg';
+import labtechnician from '/assets/lab-technitian.webp';
+import AnimatedText from '../components/animatedText';
 
 const ServicesPage = () => {
   const equipmentCategories = [
@@ -69,7 +67,6 @@ const ServicesPage = () => {
 
   return (
     <>
-      <Navbar />
       <main className='bg-white'>
         <section className='py-3 bg-primary text-white'>
           <div className='container py-5'>
@@ -90,9 +87,11 @@ const ServicesPage = () => {
         <section className='py-5 bg-light'>
           <div className='container py-4'>
             <div className='text-center mb-5'>
-              <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
-                Our Expertise
-              </span>
+              <AnimatedText>
+                <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
+                  Our Expertise
+                </span>
+              </AnimatedText>
               <h2 className='display-5 fw-bold mb-3'>
                 Comprehensive Equipment Portfolio
               </h2>
@@ -215,9 +214,11 @@ const ServicesPage = () => {
                 />
               </div>
               <div className='col-lg-6'>
-                <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
-                  Why Choose Us
-                </span>
+                <AnimatedText>
+                  <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2'>
+                    Why Choose Us
+                  </span>
+                </AnimatedText>
                 <h2 className='display-5 fw-bold mb-4'>
                   Beyond Equipment Supply
                 </h2>
@@ -276,10 +277,7 @@ const ServicesPage = () => {
               requirements and application needs
             </p>
             <div className='d-flex flex-wrap justify-content-center gap-3'>
-              <a
-                href='#contact'
-                className='btn btn-light btn-lg px-3 py-2 fw-semibold'
-              >
+              <a href='#contact' className='btn btn-light btn-lg px-3 py-2'>
                 Request Consultation
               </a>
               <a href='#' className='btn btn-outline-light btn-lg px-3 py-2'>
@@ -288,13 +286,7 @@ const ServicesPage = () => {
             </div>
           </div>
         </section>
-        <section className='py-5 bg-light' id='contact'>
-          <div className='container py-5'>
-            <ContactUs />
-          </div>
-        </section>
       </main>
-      <Footer />
     </>
   );
 };

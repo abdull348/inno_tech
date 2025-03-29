@@ -1,3 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -41,36 +59,60 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-/* Navbar enhancements */
 .navbar {
   transition: all 0.3s ease;
 }
-
 .nav-link {
   position: relative;
   transition: color 0.2s ease;
 }
-
 .nav-link:hover {
   color: #0066cc !important;
 }
-/* Custom hamburger icon */
-.navbar-toggler-icon-custom {
+.nav-link.active {
+  color: #0066cc !important;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background-color: #0066cc;
+}
+/* .navbar-toggler-icon-custom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
   height: 16px;
 }
-
 .navbar-toggler-icon-custom span {
   display: block;
   height: 2px;
   width: 100%;
   background-color: #333;
   transition: all 0.3s ease;
+} */
+.navbar-toggler-icon-custom {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: none;
+  position: relative;
 }
-
+.navbar-toggler-icon-custom span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
 .nav-link:not(.text-primary):hover::after {
   content: '';
   position: absolute;
@@ -82,12 +124,9 @@ button {
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-
 .nav-link:hover::after {
   transform: scaleX(1);
 }
-
-/* Mobile menu adjustments */
 @media (max-width: 992px) {
   .navbar-collapse {
     padding: 1rem;
@@ -95,66 +134,6 @@ button {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
 }
-/* .navbar {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
-}
-.navbar-nav .nav-link {
-  line-height: 1.5;
-  letter-spacing: 0.2px;
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 16px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-.navbar-nav .nav-link:hover {
-  color: #f16921;
-}
-.navbar-toggler {
-  border: none;
-  background-color: transparent;
-  box-shadow: none !important;
-  cursor: pointer;
-}
-.navbar-toggler:focus {
-  outline: none;
-}
-.navbar-collapse {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .navbar-collapse {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-    border-radius: 8px;
-    padding: 10px;
-  }
-  .navbar-collapse.show {
-    display: block;
-  }
-  .navbar-collapse a {
-    line-height: 1.7;
-    letter-spacing: 0.4px;
-    display: block;
-    color: #1a1a1a;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-bottom: 1px solid #ddd;
-  }
-  .navbar-collapse a:hover {
-    background-color: #f8f9fa;
-  }
-} */
-
-/* Button Enhancements */
 .btn-outline-light:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -302,28 +281,22 @@ button {
 .shadow-sm-hover {
   transition: all 0.3s ease;
 }
-
 .shadow-sm-hover:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
 }
-
 .transition-all {
   transition: all 0.3s ease;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .sticky-top {
     position: relative !important;
     top: 0 !important;
   }
 }
-
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .hover-lift:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;

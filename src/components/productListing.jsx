@@ -1,9 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ShoppingCart, Check } from 'lucide-react';
-import Navbar from './navbar.jsx';
-import Footer from './footer.jsx';
 import products from '../productData.js';
-import ContactUs from './contact.jsx';
 
 const ProductDetail = () => {
   const navigate = useNavigate();
@@ -17,7 +14,6 @@ const ProductDetail = () => {
 
   return (
     <>
-      <Navbar />
       <section className='py-4 bg-light'>
         <div
           className='container d-flex justify-content-center align-items-center'
@@ -26,9 +22,9 @@ const ProductDetail = () => {
           <nav aria-label='breadcrumb'>
             <ol className='breadcrumb'>
               <li className='breadcrumb-item'>
-                <a href='/products' className='text-decoration-none'>
+                <Link to='/products' className='text-decoration-none'>
                   Products
-                </a>
+                </Link>
               </li>
               <li className='breadcrumb-item active' aria-current='page'>
                 {product.name}
@@ -40,7 +36,7 @@ const ProductDetail = () => {
 
       <section className='py-5'>
         <div className='container'>
-          <div className='row g-5'>
+          <div className='row'>
             <div className='col-lg-6'>
               <div className='bg-white p-3 rounded-3 shadow-sm mb-4'>
                 <img
@@ -136,6 +132,72 @@ const ProductDetail = () => {
                 </div>
               </div>
             </div>
+
+            {product.table && Object.keys(product.table).length > 0 && (
+              <div className='container mt-5'>
+                <div className='row'>
+                  <div className='col-12'>
+                    <div className='bg-white rounded-3 shadow-sm p-4'>
+                      <h3 className='fw-bold mb-4 pb-2 border-bottom'>
+                        Technical Specifications Table
+                      </h3>
+                      <div className='table-responsive'>
+                        <table className='table table-bordered table-striped'>
+                          <tbody>
+                            {Object.entries(product.table).map(
+                              ([key, value], index) => (
+                                <tr key={index}>
+                                  <th className='w-50 bg-light fw-semibold'>
+                                    {key}
+                                  </th>
+                                  <td className='w-50'>{value}</td>
+                                </tr>
+                              )
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {product.rotorSpecs && product.rotorSpecs.length > 0 && (
+              <div className='container mt-4'>
+                <div className='row'>
+                  <div className='col-12'>
+                    <div className='bg-white rounded-3 shadow-sm p-4'>
+                      <h3 className='fw-bold mb-4 pb-2 border-bottom'>
+                        Rotor Specifications
+                      </h3>
+                      <div className='table-responsive'>
+                        <table className='table table-bordered table-striped'>
+                          <thead className='table-light'>
+                            <tr>
+                              <th>Rotors</th>
+                              <th>Capacity</th>
+                              <th>Max. Speed</th>
+                              <th>Max. RCF</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {product.rotorSpecs.map((spec, index) => (
+                              <tr key={index}>
+                                <td>{spec.rotor}</td>
+                                <td>{spec.capacity}</td>
+                                <td>{spec.maxSpeed}</td>
+                                <td>{spec.maxRCF}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -208,13 +270,6 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
-
-      <section className='py-5 bg-light' id='contact'>
-        <div className='container py-5'>
-          <ContactUs />
-        </div>
-      </section>
-      <Footer />
     </>
   );
 };
