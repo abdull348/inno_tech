@@ -12,6 +12,41 @@ import aboutlab from '/assets/about-lab.webp';
 import AnimatedText from '../components/animatedText';
 
 const AboutUs = () => {
+  const testimonials = [
+    {
+      id: 1,
+      quote:
+        'The centrifuge maintains perfect balance even at 15,000 RPM. Exceptional precision for our cell research.',
+      name: 'Dr. Sarah Chen',
+      affiliation: 'MIT Bioengineering',
+      rating: 5,
+    },
+    {
+      id: 2,
+      quote:
+        'Their sterilization equipment reduced our lab contamination rate by 62%. Game-changing reliability.',
+      name: 'Prof. James Wilson',
+      affiliation: 'Stanford Medical',
+      rating: 5,
+    },
+    {
+      id: 3,
+      quote:
+        'The -80°C freezer maintains perfect temperature stability, even during power fluctuations.',
+      name: 'Dr. Priya Patel',
+      affiliation: 'Mayo Clinic Labs',
+      rating: 5,
+    },
+    {
+      id: 4,
+      quote:
+        'Their technical team diagnosed our spectrometer issue remotely in under 15 minutes. Brilliant support!',
+      name: 'Dr. Michael Okafor',
+      affiliation: 'NIH Research Center',
+      rating: 5,
+    },
+  ];
+
   return (
     <>
       <section className='py-3 bg-primary text-white'>
@@ -174,105 +209,37 @@ const AboutUs = () => {
             Trusted By Research Leaders
           </h2>
           <div className='row g-4'>
-            <div className='col-md-6 col-lg-3'>
-              <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
-                <div className='card-body p-4 text-center'>
-                  <div className='mx-auto mb-3'>
-                    <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                      <User className='text-gray-500' size={40} />
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className='col-md-6 col-lg-3'>
+                <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
+                  <div className='card-body p-4 text-center'>
+                    <div className='mx-auto mb-3'>
+                      <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
+                        <User className='text-gray-500' size={40} />
+                      </div>
                     </div>
+                    <div className='mb-3 text-warning'>
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          fill={
+                            i < Math.floor(testimonial.rating)
+                              ? 'currentColor'
+                              : ''
+                          }
+                        />
+                      ))}
+                    </div>
+                    <p className='mb-3 text-muted'>{testimonial.quote}</p>
+                    <h6 className='mb-1'>{testimonial.name}</h6>
+                    <small className='text-muted'>
+                      {testimonial.affiliation}
+                    </small>
                   </div>
-                  <div className='mb-3 text-warning'>
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                  </div>
-                  <p className='mb-3 text-muted'>
-                    The centrifuge maintains perfect balance even at 15,000 RPM.
-                    Exceptional precision for our cell research.
-                  </p>
-                  <h6 className='mb-1'>Dr. Sarah Chen</h6>
-                  <small className='text-muted'>MIT Bioengineering</small>
                 </div>
               </div>
-            </div>
-
-            <div className='col-md-6 col-lg-3'>
-              <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
-                <div className='card-body p-4 text-center'>
-                  <div className='mx-auto mb-3'>
-                    <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                      <User className='text-gray-500' size={40} />
-                    </div>
-                  </div>
-                  <div className='mb-3 text-warning'>
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                  </div>
-                  <p className='mb-3 text-muted'>
-                    Their sterilization equipment reduced our lab contamination
-                    rate by 62%. Game-changing reliability.
-                  </p>
-                  <h6 className='mb-1'>Prof. James Wilson</h6>
-                  <small className='text-muted'>Stanford Medical</small>
-                </div>
-              </div>
-            </div>
-
-            <div className='col-md-6 col-lg-3'>
-              <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
-                <div className='card-body p-4 text-center'>
-                  <div className='mx-auto mb-3'>
-                    <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                      <User className='text-gray-500' size={40} />
-                    </div>
-                  </div>
-                  <div className='mb-3 text-warning'>
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} />
-                  </div>
-                  <p className='mb-3 text-muted'>
-                    The -80°C freezer maintains perfect temperature stability,
-                    even during power fluctuations.
-                  </p>
-                  <h6 className='mb-1'>Dr. Priya Patel</h6>
-                  <small className='text-muted'>Mayo Clinic Labs</small>
-                </div>
-              </div>
-            </div>
-
-            <div className='col-md-6 col-lg-3'>
-              <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
-                <div className='card-body p-4 text-center'>
-                  <div className='mx-auto mb-3'>
-                    <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                      <User className='text-gray-500' size={40} />
-                    </div>
-                  </div>
-                  <div className='mb-3 text-warning'>
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                    <Star size={16} fill='currentColor' />
-                  </div>
-                  <p className='mb-3 text-muted'>
-                    Their technical team diagnosed our spectrometer issue
-                    remotely in under 15 minutes. Brilliant support!
-                  </p>
-                  <h6 className='mb-1'>Dr. Michael Okafor</h6>
-                  <small className='text-muted'>NIH Research Center</small>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
