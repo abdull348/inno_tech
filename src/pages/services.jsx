@@ -65,6 +65,30 @@ const ServicesPage = () => {
     },
   ];
 
+  const features = [
+    {
+      id: 1,
+      icon: <Globe size={24} />,
+      title: 'Global Support Network',
+      description:
+        '24/7 technical assistance with local service engineers in major research hubs worldwide',
+    },
+    {
+      id: 2,
+      icon: <ShieldCheck size={24} />,
+      title: 'Certified Quality',
+      description:
+        'All equipment meets ISO & IEC standards with full documentation',
+    },
+    {
+      id: 3,
+      icon: <Award size={24} />,
+      title: 'OEM Partnerships',
+      description:
+        'Direct manufacturer relationships ensuring genuine parts and best pricing',
+    },
+  ];
+
   return (
     <>
       <main className='bg-white'>
@@ -158,11 +182,11 @@ const ServicesPage = () => {
                   'Freeze Dryer',
                   'Chiller',
                   'Thermal Cycler',
-                  'Rt Thermal Cycler',
+                  'RT Thermal Cycler',
                   'Biosafety Cabinet',
                   'Laminar Flow',
                   'Fume Hood',
-                  'Pcr Cabinet',
+                  'PCR Cabinet',
                   'Plant Growth Chamber',
                   'Rotary Evaporator',
                   'Analyzer',
@@ -171,7 +195,7 @@ const ServicesPage = () => {
                   'Meter',
                   'Flame Photometer',
                   'Incubator',
-                  'Co2 Incubator',
+                  'CO2 Incubator',
                   'Oven',
                   'Vortex',
                   'Water Bath',
@@ -222,48 +246,19 @@ const ServicesPage = () => {
                 <h2 className='display-5 fw-bold mb-4'>
                   Beyond Equipment Supply
                 </h2>
-                <div className='d-flex mb-4'>
-                  <div className='me-4'>
-                    <div className='bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-flex'>
-                      <Globe size={24} />
+                {features.map((feature) => (
+                  <div key={feature.id} className='d-flex mb-4'>
+                    <div className='me-4'>
+                      <div className='bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-flex'>
+                        {feature.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className='h4 mb-2'>{feature.title}</h3>
+                      <p className='text-muted mb-0'>{feature.description}</p>
                     </div>
                   </div>
-                  <div>
-                    <h3 className='h4 mb-2'>Global Support Network</h3>
-                    <p className='text-muted mb-0'>
-                      24/7 technical assistance with local service engineers in
-                      major research hubs worldwide
-                    </p>
-                  </div>
-                </div>
-                <div className='d-flex mb-4'>
-                  <div className='me-4'>
-                    <div className='bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-flex'>
-                      <ShieldCheck size={24} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className='h4 mb-2'>Certified Quality</h3>
-                    <p className='text-muted mb-0'>
-                      All equipment meets ISO & IEC standards with full
-                      documentation
-                    </p>
-                  </div>
-                </div>
-                <div className='d-flex'>
-                  <div className='me-4'>
-                    <div className='bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-flex'>
-                      <Award size={24} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className='h4 mb-2'>OEM Partnerships</h3>
-                    <p className='text-muted mb-0'>
-                      Direct manufacturer relationships ensuring genuine parts
-                      and best pricing
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
