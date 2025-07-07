@@ -286,3 +286,12 @@ button {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
+.scroll-to-top {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.scroll-to-top:hover {
+  transform: scale(1.05);
+}
+circle {
+  transition: stroke-dashoffset 0.1s linear;
+}
