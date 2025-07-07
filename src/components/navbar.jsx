@@ -28,14 +28,14 @@ function Navbar() {
         className='navbar navbar-expand-lg sticky-top shadow-sm'
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           zIndex: 1030,
         }}
       >
         <div className='container py-0 py-lg-0'>
           <Link to='/' className='navbar-brand'>
-            <img src={innotech} alt='InnoTech' width='160' height='60' />
+            <img src={innotech} alt='InnoTech' width='145' height='45' />
           </Link>
 
           <div className='d-none d-lg-flex align-items-center ms-auto me-4'>

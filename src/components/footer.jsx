@@ -12,16 +12,16 @@ function Footer() {
         { name: 'Laboratory Equipment', url: '/' },
         { name: 'Medical Devices', url: '/' },
         { name: 'Industrial Instruments', url: '/' },
-        { name: 'New Arrivals', url: '/' },
+        { name: 'Featured Products', url: '/products' },
       ],
     },
     {
       title: 'Company',
       links: [
         { name: 'About Us', url: '/about' },
-        { name: 'Featured Products', url: '/products' },
         { name: 'Services', url: '/services' },
-        { name: 'Careers', url: '/careers' },
+        { name: 'Privacy Policy', url: '/' },
+        { name: 'Terms & Conditions', url: '/' },
       ],
     },
     {
@@ -36,7 +36,7 @@ function Footer() {
   ];
 
   return (
-    <footer className='bg-dark text-white pt-5 pb-4'>
+    <footer className='bg-dark text-white pt-5 pb-1'>
       <div className='container'>
         <div className='row g-4'>
           <div className='col-lg-4'>
@@ -140,25 +140,24 @@ function Footer() {
         <hr className='my-4 border-secondary' />
 
         <div className='row align-items-center'>
-          <div className='col-md-6 mb-3 mb-md-0'>
+          <div className='col-md-6 mb-0 mb-md-0'>
             <p className='small text-white-50 mb-0'>
               © {new Date().getFullYear()} InnoTech Technologies. All rights
               reserved.
             </p>
           </div>
           <div className='col-md-6 text-md-end'>
-            <Link
-              to='/'
-              className='small text-white-50 text-decoration-none me-3 hover-primary'
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to='/'
-              className='small text-white-50 text-decoration-none me-3 hover-primary'
-            >
-              Terms & Conditions
-            </Link>
+            <p className='text-xs text-gray-500'>
+              Developed by{' '}
+              <a
+                href='https://devprimo.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-white-50 text-decoration-none hover:text-blue-400 transition-colors duration-200'
+              >
+                DevPrimo
+              </a>
+            </p>
           </div>
         </div>
       </div>
