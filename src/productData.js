@@ -117,7 +117,7 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
     ],
   },
   {
-    id: 1,
+    id: 2,
     name: 'Micro Centrifuge MC-20',
     image: '/assets/inno-MC20R.png',
     description: `innoTECH laboratory refrigerated centrifuge is a high-quality centrifuge with excellent performance for research labs, clinics, biotechnological, industrial, and hospitals. Microprocessor control. Induction motor maintenance free. Messages on the screen indicating the centrifuge and accessoriesstate. RPM/RCF adjustable along the run, Up to 30 programs in-store, countdown start at set RPM /RCF and rotors information on memory.Centrifugation chamber in stainless steel, guard ring around the chamber with manual emergency lid release.`,
@@ -227,7 +227,7 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
     ],
   },
   {
-    id: 9,
+    id: 3,
     name: 'Micro Centrifuge MC-16R',
     image: '/assets/inno-MC20R.png',
     description: `innoTECH laboratory refrigerated centrifuge is high quality centrifuge with excellent performance for research labs clinic, 
@@ -246,7 +246,7 @@ in stainless steel, guard ring around chamber with manual emergency lid release.
     },
   },
   {
-    id: 2,
+    id: 4,
     name: 'Micro Centrifuge MC-15',
     image: '/assets/inno-MC15.png',
     description: `innoTECH Microcentrifuge is high quality and low-cost centrifuge with stable performance. LCD display with motor overheating protection function and
@@ -261,7 +261,7 @@ in stainless steel, guard ring around chamber with manual emergency lid release.
     },
   },
   {
-    id: 3,
+    id: 5,
     name: '-86°C Freezer 86690',
     image: '/assets/86-freezer.png',
     description: `innoTECH -86°C Ultra-low temperature freezers are high quality with fast 
@@ -289,7 +289,7 @@ failure alarm, door open alarm, system failure alarm and power failure alarm`,
     },
   },
   {
-    id: 4,
+    id: 6,
     name: 'Liquid Nitrogen Container C50',
     image: '/assets/liquid-nitrogen-container.png',
     description: `Our liquid nitrogen containers/Dewar’s are widely used in biological engineering and medical 
@@ -304,7 +304,7 @@ processing.`,
     },
   },
   {
-    id: 5,
+    id: 7,
     name: 'Autoclave Sterilizer AC101',
     image: '/assets/autoclave-sterilizer.png',
     description: `InnoTECH autoclaves are high quality and low
@@ -331,7 +331,7 @@ research ins tutes and other organiza ons.`,
     },
   },
   {
-    id: 6,
+    id: 8,
     name: 'Benchtop pH Meter PH18',
     image: '/assets/PH-18P.png',
     description: `6.5-inch LED screen. It supports wireless Bluetooth printing. Auto-recognition of 25 bu ers. Can store 999 sets of data. Built-in microprocessor chips
@@ -345,7 +345,7 @@ research ins tutes and other organiza ons.`,
     },
   },
   {
-    id: 7,
+    id: 9,
     name: 'Single Beam Spectrophotometer UV-2000',
     image: '/assets/single-beam-spectrophotometer.png',
     description: `UV-VIS  single beam spectrophotometer are high quality and economical system designed for research labs, clinical labs,
@@ -363,7 +363,7 @@ research ins tutes and other organiza ons.`,
     },
   },
   {
-    id: 8,
+    id: 10,
     name: 'Benchtop pH Conductivity DO Meter PCD50',
     image: '/assets/conductivity-meter.png',
     description: `6.5-inch LED screen. It supports wireless Bluetooth prin ng. Auto 
@@ -385,7 +385,7 @@ compensa on. Polarographic DO electrode.`,
     },
   },
   {
-    id: 10,
+    id: 11,
     name: 'Autoclave Sterilizer AC51',
     image: '/assets/autoclave-sterilizer.png',
     description: `InnoTECH autoclaves are high quality and low
@@ -412,7 +412,7 @@ research ins tutes and other organiza ons.`,
     },
   },
   {
-    id: 11,
+    id: 12,
     name: 'Liquid Nitrogen Container C35',
     image: '/assets/liquid-nitrogen-container.png',
     description: `Our liquid nitrogen containers/Dewar’s are widely used in biological engineering and medical 
@@ -427,7 +427,7 @@ processing.`,
     },
   },
   {
-    id: 12,
+    id: 13,
     name: '-40°C Freezer 40460',
     image: '/assets/40-Freezer.png',
     description: `innoTECH -40°C Low temperature freezers are high quality and low cost 
@@ -455,7 +455,7 @@ cabinet.`,
     },
   },
   {
-    id: 13,
+    id: 14,
     name: 'Double Beam Spectrophotometer DB6500',
     image: '/assets/double-beam-spectrophotometer.png',
     description: `Double beam spectrophotometer are high quality and economical system designed for research labs, clinical labs,
@@ -473,7 +473,7 @@ cabinet.`,
     },
   },
   {
-    id: 14,
+    id: 15,
     name: 'Liquid Nitrogen Container C10',
     image: '/assets/liquid-nitrogen-container.png',
     description: `Our liquid nitrogen containers/Dewar’s are widely used in biological engineering and medical 
