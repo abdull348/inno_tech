@@ -116,7 +116,135 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       },
     ],
   },
-
+  {
+    id: 1,
+    name: 'Micro Centrifuge MC-20',
+    image: '/assets/inno-MC20R.png',
+    description: `innoTECH laboratory refrigerated centrifuge is a high-quality centrifuge with excellent performance for research labs, clinics, biotechnological, industrial, and hospitals. Microprocessor control. Induction motor maintenance free. Messages on the screen indicating the centrifuge and accessoriesstate. RPM/RCF adjustable along the run, Up to 30 programs in-store, countdown start at set RPM /RCF and rotors information on memory.Centrifugation chamber in stainless steel, guard ring around the chamber with manual emergency lid release.`,
+    specs: {
+      Model: 'inno-MC-20',
+      Speed: '20000 RPM',
+      RCF: '27800 x g',
+      Capacity: '4 x 100 ml',
+      'Temperature Range': '-20°C to 40°C',
+      Dimensions: '400 x 345 x 340',
+    },
+    table: {
+      Model: 'inno-MC-20',
+      Speed: '20000 RPM',
+      RCF: '27800 x g',
+      'Temperature Range': '-20°C to 40°C',
+      Capacity: '4 x 100 ml',
+      'Timing Range': '1 ~ 99 min',
+      'Temperature Accuracy': '± 2°C',
+      'Speed Accuracy': '± 20 RPM',
+      Acceleration: '1 ~ 10 Sec',
+      Deceleration: '1 ~ 10 Sec',
+      Screen: 'LCD display',
+      Voltage: 'AC 220V, 50/60Hz, 5A',
+      'Dimensions(mm)': '400 x 345 x 340',
+      'Weight(kg)': 27.5,
+    },
+    rotorSpecs: [
+      {
+        rotor: 'Angle Rotor-1',
+        capacity: '12 x 0.5 ml',
+        maxSpeed: '20000 RPM',
+        maxRCF: '20380 x g',
+      },
+      {
+        rotor: 'Angle Rotor-2',
+        capacity: '48 x 0.5 ml',
+        maxSpeed: '16000 RPM',
+        maxRCF: '21900 x g',
+      },
+      {
+        rotor: 'Angle Rotor-3',
+        capacity: '12 x 1.5 ml / 2.0 ml',
+        maxSpeed: '20000 RPM',
+        maxRCF: '27800 x g',
+      },
+      {
+        rotor: 'Angle Rotor-4',
+        capacity: '24 x 1.5 ml / 2.0 ml',
+        maxSpeed: '16000 RPM',
+        maxRCF: '23800 x g',
+      },
+      {
+        rotor: 'Angle Rotor-5',
+        capacity: '30 x 1.5 ml / 2.0 ml',
+        maxSpeed: '14000 RPM',
+        maxRCF: '20800 x g',
+      },
+      {
+        rotor: 'Angle Rotor-6',
+        capacity: '48 x 1.5 ml / 2.0 ml',
+        maxSpeed: '14000 RPM',
+        maxRCF: '20850 x g',
+      },
+      {
+        rotor: 'Angle Rotor-7',
+        capacity: '10 x 5 ml',
+        maxSpeed: '16000 RPM',
+        maxRCF: '17780 x g',
+      },
+      {
+        rotor: 'Angle Rotor-8',
+        capacity: '12 x 10 ml',
+        maxSpeed: '15000 RPM',
+        maxRCF: '19910 x g',
+      },
+      {
+        rotor: 'Angle Rotor-9',
+        capacity: '12 x 15 ml',
+        maxSpeed: '13000 RPM',
+        maxRCF: '19495 x g',
+      },
+      {
+        rotor: 'Angle Rotor-10',
+        capacity: '4 x 50 ml',
+        maxSpeed: '14000 RPM',
+        maxRCF: '19910 x g',
+      },
+      {
+        rotor: 'Angle Rotor-11',
+        capacity: '6 x 50 ml',
+        maxSpeed: '13000 RPM',
+        maxRCF: '18850 x g',
+      },
+      {
+        rotor: 'Angle Rotor-12',
+        capacity: '4 x 100 ml',
+        maxSpeed: '11000 RPM',
+        maxRCF: '13280 x g',
+      },
+      {
+        rotor: 'PCR Rotor-13',
+        capacity: '4 x 8 x 0.2 ml PCR Strip',
+        maxSpeed: '14000 RPM',
+        maxRCF: '13500 x g',
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: 'Micro Centrifuge MC-16R',
+    image: '/assets/inno-MC20R.png',
+    description: `innoTECH laboratory refrigerated centrifuge is high quality centrifuge with excellent performance for research labs clinic, 
+    biotechnological, industrial and hospitals. Microprocessor control. Induc on motor 
+maintenance free. Messages on screen 
+indica ng the centrifuge and accessories 
+state. RPM/RCF adjustable along the run, Up to 30 programs in store, countdown 
+start at set RPM /RCF and rotors informa on on memory. Centrifuga on chamber 
+in stainless steel, guard ring around chamber with manual emergency lid release.`,
+    specs: {
+      Model: 'inno-MC-16R',
+      Speed: '16000 RPM',
+      Capacity: '12 x 1.5/2.0 mL',
+      'Temperature Range': '-20°C to 40°C',
+      Dimensions: '350 X 600 X 300',
+    },
+  },
   {
     id: 2,
     name: 'Micro Centrifuge MC-15',
@@ -254,25 +382,6 @@ compensa on. Polarographic DO electrode.`,
       Capacity: 'N/A',
       'Temperature Range': '0°C to 99°C',
       Dimensions: '235 x 165 x 65 cm',
-    },
-  },
-  {
-    id: 9,
-    name: 'Micro Centrifuge MC-16R',
-    image: '/assets/inno-MC20R.png',
-    description: `innoTECH laboratory refrigerated centrifuge is high quality centrifuge with excellent performance for research labs clinic, 
-    biotechnological, industrial and hospitals. Microprocessor control. Induc on motor 
-maintenance free. Messages on screen 
-indica ng the centrifuge and accessories 
-state. RPM/RCF adjustable along the run, Up to 30 programs in store, countdown 
-start at set RPM /RCF and rotors informa on on memory. Centrifuga on chamber 
-in stainless steel, guard ring around chamber with manual emergency lid release.`,
-    specs: {
-      Model: 'inno-MC-16R',
-      Speed: '16000 RPM',
-      Capacity: '12 x 1.5/2.0 mL',
-      'Temperature Range': '-20°C to 40°C',
-      Dimensions: '350 X 600 X 300',
     },
   },
   {
