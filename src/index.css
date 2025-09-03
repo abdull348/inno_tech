@@ -40,14 +40,34 @@ body {
   padding: 1rem;
 }
 section {
-  padding: 2rem 0;
+  padding: 4rem 0;
+}
+@media (min-width: 576px) {
+  section {
+    padding: 5rem 0;
+  }
+}
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    padding: 7rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  section {
+    padding: 7.5rem 0;
+  }
 }
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 button {
-  border-radius: 8px;
+  border-radius: 3px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -56,18 +76,42 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-.navbar {
-  transition: all 0.3s ease;
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 63%;
+    max-width: 300px;
+    height: 100vh;
+    padding: 1.5rem;
+    background: white;
+    z-index: 1050;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-collapse.show {
+    transform: translateX(0);
+    background: white;
+  }
+  .navbar-brand {
+    z-index: 1060;
+  }
+  .navbar-toggler {
+    z-index: 1060;
+  }
 }
 .nav-link {
   position: relative;
   transition: color 0.2s ease;
 }
 .nav-link:hover {
-  color: #0066cc !important;
+  color: #0052a3 !important;
 }
 .nav-link.active {
-  color: #0066cc !important;
+  color: #0052a3 !important;
   position: relative;
 }
 .nav-link.active::after {
@@ -77,23 +121,7 @@ button {
   left: 1rem;
   right: 1rem;
   height: 1px;
-  background-color: #0066cc;
-}
-.navbar-toggler-icon-custom {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-image: none;
-  position: relative;
-}
-.navbar-toggler-icon-custom span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  margin: 4px 0;
-  transition: all 0.3s;
+  background-color: #0052a3;
 }
 .nav-link:not(.text-primary):hover::after {
   content: '';
@@ -102,26 +130,26 @@ button {
   left: 1rem;
   right: 1rem;
   height: 2px;
-  background-color: #0066cc;
+  background-color: #0052a3;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 .nav-link:hover::after {
   transform: scaleX(1);
 }
-@media (max-width: 992px) {
-  .navbar-collapse {
-    padding: 1rem;
-    background: white;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
+.btn-outline-light {
+  border-width: 1px;
+  border-radius: 3px;
 }
 .btn-outline-light:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 .btn-primary {
   background-color: #0066cc;
   border-color: #0066cc;
+  border-width: 1px;
+  border-radius: 3px;
 }
 .btn-primary:hover {
   background-color: #0052a3;
@@ -138,7 +166,7 @@ button {
 }
 .product-card {
   transition: all 0.3s ease;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 .product-card:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
@@ -147,29 +175,22 @@ button {
   border-width: 2px;
   font-weight: 500;
 }
-#partnership {
+.partner-bg {
+  background-color: #ffffff;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><g fill="%23F7F8FC"><path d="M400 480H80a160 160 0 1 1 320 0ZM80 0h320A160 160 0 1 1 80 0ZM0 400V80a160 160 0 1 1 0 320ZM480 80v320a160 160 0 1 1 0-320Z"></path><circle cx="240" cy="240" r="80"></circle></g></svg>');
+  background-repeat: repeat;
+  background-size: 160px 160px;
   position: relative;
-  overflow: hidden;
 }
-#partnership::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(241, 105, 33, 0.05) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 0;
+@media (max-width: 576px) {
+  .responsive-img {
+    max-width: 90% !important;
+  }
 }
-.partner-img {
-  transition: all 0.3s ease;
-}
-.partner-img:hover {
-  transform: rotate(0deg) scale(1.02);
+@media (min-width: 577px) {
+  .responsive-img {
+    max-width: 80% !important;
+  }
 }
 .btn-outline-secondary:hover {
   background-color: #f8f9fa;
@@ -180,7 +201,7 @@ button {
 #contact .form-control:focus,
 #contact .form-select:focus {
   border-color: #0066cc;
-  box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+  box-shadow: 0 0 0 0.05rem rgba(0, 102, 204, 0.25);
 }
 @media (max-width: 992px) {
   #contact .col-lg-4 {
@@ -190,6 +211,9 @@ button {
 .hover-primary:hover {
   color: #0066cc !important;
   transition: color 0.2s ease;
+}
+.bg-secondary {
+  background-color: #0052a3 !important;
 }
 .bg-dark {
   background-color: #1a1a1a !important;
@@ -229,7 +253,7 @@ button {
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
   opacity: 0.7;
-  border-radius: 4px;
+  border-radius: 3px;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -247,18 +271,8 @@ button {
 .hero-tagline {
   color: #fff;
 }
-@media (max-width: 768px) {
-  .hero-tagline {
-    color: #212529;
-  }
-}
 .hero-description {
   color: #d8d8d8;
-}
-@media (max-width: 768px) {
-  .hero-description {
-    color: #212529;
-  }
 }
 .shadow-sm-hover {
   transition: all 0.3s ease;

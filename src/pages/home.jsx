@@ -9,9 +9,9 @@ const Home = () => {
     <>
       <main>
         <Hero />
-        <AboutUs className='container mx-auto mt-5 p-4' />
-        <ProductListing className='container mx-auto mt-5 p-4' />
-        <Partner className='container mx-auto mt-5 p-4' />
+        <AboutUs />
+        <ProductListing />
+        <Partner />
       </main>
     </>
   );

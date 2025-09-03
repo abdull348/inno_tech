@@ -1,6 +1,5 @@
 import { ArrowUpRight, Handshake, ShieldCheck, Globe } from 'lucide-react';
 import partnerImage from '/assets/partner.webp';
-import AnimatedText from './animatedText';
 
 const Partner = () => {
   const partnerBenefits = [
@@ -15,30 +14,38 @@ const Partner = () => {
   ];
 
   return (
-    <section className='py-5 bg-white' id='partnership'>
-      <div className='container py-4 py-lg-5'>
+    <section className='bg-white partner-bg' id='partnership'>
+      <div className='container'>
         <div className='row align-items-center'>
-          <div className='col-lg-6 order-lg-1 p-4 p-lg-5 mx-auto'>
-            <div className='position-relative'>
+          <div className='col-lg-6 d-flex justify-content-center'>
+            <div className='position-relative w-100'>
               <img
                 src={partnerImage}
                 alt='Laboratory Partnership'
-                className='img-fluid rounded-3 shadow-lg mx-auto'
+                className='img-fluid rounded-3 shadow-lg'
                 style={{
-                  maxWidth: '90%',
-                  height: 'auto',
+                  width: '100%',
+                  maxWidth: '500px',
+                  display: 'block',
+                  margin: '0 auto',
                 }}
               />
-              <div className='position-absolute bottom-0 start-0 bg-white p-3 m-3 rounded-2 shadow-sm'>
+              <div
+                className='position-absolute bottom-0 start-50 translate-middle-x bg-white px-3 py-2 rounded-2 shadow'
+                style={{
+                  width: '90%',
+                  maxWidth: '290px',
+                }}
+              >
                 <div className='d-flex align-items-center'>
                   <div
-                    className='bg-primary text-white rounded-circle p-2 d-flex align-items-center justify-content-center'
-                    style={{ width: '40px', height: '40px' }}
+                    className='bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3'
+                    style={{ width: '36px', height: '36px' }}
                   >
-                    <Handshake size={20} />
+                    <Handshake size={18} />
                   </div>
-                  <div className='ms-2'>
-                    <h6 className='mb-0'>150+ Partners</h6>
+                  <div>
+                    <h6 className='mb-0 fw-semibold'>150+ Partners</h6>
                     <small className='text-muted'>Worldwide network</small>
                   </div>
                 </div>
@@ -46,15 +53,18 @@ const Partner = () => {
             </div>
           </div>
 
-          <div className='col-lg-6 p-4 p-lg-5'>
+          <div className='col-lg-6 p-3 p-lg-5'>
             <div className='pe-lg-4'>
-              <AnimatedText>
-                <span className='badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 d-inline-flex align-items-center'>
-                  <Handshake size={16} className='me-2' />
-                  Strategic Partnerships
-                </span>
-              </AnimatedText>
-              <h2 className='display-5 fw-bold mb-4'>
+              <h2
+                className='display-6 fw-bold mb-2'
+                style={{
+                  background: 'linear-gradient(to right, #222, #1a237e)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  MozBackgroundClip: 'text',
+                  MozTextFillColor: 'transparent',
+                }}
+              >
                 Elevate Your Lab with Trusted Partnerships
               </h2>
 
@@ -66,32 +76,29 @@ const Partner = () => {
 
               <div className='mb-4'>
                 {partnerBenefits.map((benefit, index) => (
-                  <div key={index} className='d-flex align-items-center mb-3'>
+                  <div key={index} className='d-flex align-items-center mb-2'>
                     <div
-                      className='bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center'
-                      style={{ width: '40px', height: '40px' }}
+                      className='text-primary me-2 d-flex align-items-center justify-content-center'
+                      style={{ width: '28px', height: '28px' }}
                     >
                       {benefit.icon}
                     </div>
-                    <p className='mb-0 fw-medium'>{benefit.text}</p>
+                    <p className='mb-0 fw-medium text-muted'>{benefit.text}</p>
                   </div>
                 ))}
               </div>
               <div className='d-flex flex-wrap gap-3 mt-4'>
-                <a
-                  href='#contact'
-                  className='btn btn-primary px-4 py-2 d-flex align-items-center'
+                <button
+                  className='btn btn-primary btn-md px-4 py-2 d-flex align-items-center rounded-pill shadow-sm'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    document
+                      .getElementById('contact')
+                      ?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Become a Partner <ArrowUpRight className='ms-2' size={18} />
-                </a>
-                <a
-                  href='/partnership-brochure.pdf'
-                  className='btn btn-outline-primary px-4 py-2 d-flex align-items-center'
-                  download
-                >
-                  Download Partnership Kit{' '}
-                  <ArrowUpRight className='ms-2' size={18} />
-                </a>
+                </button>
               </div>
             </div>
           </div>

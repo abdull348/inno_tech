@@ -11,10 +11,14 @@ function ContactUs() {
               Get In Touch
             </span>
           </AnimatedText>
-          <h2 className='display-5 fw-bold mb-3'>
+          <h2 className='display-6 fw-bold mb-2'>
             <span className='text-primary'>Contact</span> Our Technical Team
           </h2>
-          <p className='lead text-muted mx-auto' style={{ maxWidth: '700px' }}>
+
+          <p
+            className='lead text-muted display-8 mx-auto'
+            style={{ maxWidth: '700px' }}
+          >
             Have questions about our laboratory equipment? Our specialists are
             ready to assist with technical specifications, quotes, and support.
           </p>
@@ -23,7 +27,7 @@ function ContactUs() {
         <div className='row g-4 justify-content-center'>
           <div className='col-lg-10'>
             <div className='card border-0 shadow-sm h-100'>
-              <div className='card-body p-4 p-lg-5'>
+              <div className='card-body p-3 p-lg-5'>
                 <h3 className='h5 fw-bold mb-4'>Send Us a Message</h3>
                 <form>
                   <div className='row g-3'>
@@ -104,9 +108,9 @@ function ContactUs() {
                     <div className='col-12 mt-3'>
                       <button
                         type='submit'
-                        className='btn btn-primary px-4 py-2 d-flex align-items-center ms-auto'
+                        className='btn btn-primary btn-md px-4 py-2 d-flex align-items-center ms-auto rounded-pill shadow-sm'
                       >
-                        Send Message <Send className='ms-2' size={18} />
+                        Send Message <Send className='ms-2' size={16} />
                       </button>
                     </div>
                   </div>

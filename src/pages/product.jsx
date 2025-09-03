@@ -6,7 +6,10 @@ const Home = () => {
   return (
     <>
       <main className='bg-white'>
-        <section className='py-3 bg-primary text-white'>
+        <section
+          className='py-3 bg-secondary text-white'
+          style={{ background: 'linear-gradient(135deg, #0056b3, #003366)' }}
+        >
           <div className='container py-4 py-lg-5'>
             <div className='row align-items-center'>
               <div className='col-lg-8'>
@@ -23,22 +26,22 @@ const Home = () => {
           </div>
         </section>
 
-        <section className='py-5 bg-white'>
-          <div className='container py-5'>
+        <section className='bg-white'>
+          <div className='container'>
             <div className='row g-4'>
               {[
                 {
-                  icon: <ShieldCheck size={32} />,
+                  icon: <ShieldCheck size={28} />,
                   title: 'Certified Quality',
                   text: 'ISO certified',
                 },
                 {
-                  icon: <Truck size={32} />,
+                  icon: <Truck size={28} />,
                   title: 'Fast Delivery',
                   text: 'Global logistics network',
                 },
                 {
-                  icon: <LifeBuoy size={32} />,
+                  icon: <LifeBuoy size={28} />,
                   title: '24/7 Support',
                   text: 'Technical assistance anytime',
                 },
@@ -59,11 +62,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section id='products' className='py-5 bg-light'>
-          <div className='container'>
-            <ProductListing />
-          </div>
-        </section>
+        <ProductListing />
       </main>
     </>
   );

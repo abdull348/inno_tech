@@ -8,7 +8,7 @@ import {
   Star,
   User,
 } from 'lucide-react';
-import aboutlab from '/assets/about-lab.webp';
+import aboutlab from '/assets/about-lab.jpg';
 import AnimatedText from '../components/animatedText';
 
 const AboutUs = () => {
@@ -49,10 +49,13 @@ const AboutUs = () => {
 
   return (
     <>
-      <section className='py-3 bg-primary text-white'>
+      <section
+        className='py-3 bg-secondary text-white'
+        style={{ background: 'linear-gradient(135deg, #0056b3, #003366)' }}
+      >
         <div className='container py-4 py-lg-5'>
           <div className='row align-items-center'>
-            <div className='col-lg-6'>
+            <div className='col-lg-7'>
               <h1 className='display-4 fw-bold mb-4'>
                 Advancing Science Since{' '}
                 <span className='text-warning'>2014</span>
@@ -67,10 +70,21 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className='py-5 bg-light'>
-        <div className='container py-5'>
+      <section className='bg-light'>
+        <div className='container'>
           <div className='text-center mb-5'>
-            <h2 className='display-5 fw-bold mb-3'>Our Core Principles</h2>
+            <h2
+              className='display-6 fw-bold mb-2'
+              style={{
+                background: 'linear-gradient(to right, #222, #1a237e)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                MozBackgroundClip: 'text',
+                MozTextFillColor: 'transparent',
+              }}
+            >
+              Our Core Principles
+            </h2>
             <div className='mx-auto' style={{ maxWidth: '700px' }}>
               <p className='lead text-muted'>
                 Driving scientific progress through uncompromising quality and
@@ -81,17 +95,17 @@ const AboutUs = () => {
           <div className='row g-4'>
             {[
               {
-                icon: <FlaskConical size={32} className='text-primary' />,
+                icon: <FlaskConical size={28} className='text-primary' />,
                 title: 'Scientific Integrity',
                 description: 'Equipment that meets strict research standards',
               },
               {
-                icon: <ShieldCheck size={32} className='text-primary' />,
+                icon: <ShieldCheck size={28} className='text-primary' />,
                 title: 'Quality Assurance',
                 description: 'ISO-certified manufacturing processes',
               },
               {
-                icon: <Globe size={32} className='text-primary' />,
+                icon: <Globe size={28} className='text-primary' />,
                 title: 'Global Impact',
                 description: 'Serving 500+ institutions across 30 countries',
               },
@@ -110,14 +124,15 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className='py-5 bg-light'>
-        <div className='container py-5'>
+      <section className='bg-light'>
+        <div className='container'>
           <div className='row align-items-center'>
             <div className='col-lg-6 order-lg-2 mb-4 mb-lg-0'>
-              <h2 className='display-5 fw-bold mb-4'>
+              <h2 className='display-6 fw-bold mb-3'>
                 <span className='text-primary'>Technical Excellence</span> in
                 Lab Solutions
               </h2>
+
               <ul className='list-unstyled'>
                 {[
                   '10+ years specializing in precision instruments',
@@ -136,25 +151,33 @@ const AboutUs = () => {
               <img
                 src={aboutlab}
                 alt='Laboratory Equipment'
-                className='img-fluid rounded-3 shadow mx-auto'
-                style={{ maxWidth: '80%', height: 'auto' }}
+                className='img-fluid rounded-3 shadow mx-auto responsive-img'
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className='py-5 bg-white'>
-        <div className='container py-5'>
+      <section className='bg-white'>
+        <div className='container'>
           <div className='text-center mb-5'>
-            <h2 className='display-5 fw-bold mb-3'>
+            <h2
+              className='display-6 fw-bold mb-2'
+              style={{
+                background: 'linear-gradient(to right, #222, #1a237e)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                MozBackgroundClip: 'text',
+                MozTextFillColor: 'transparent',
+              }}
+            >
               Trusted Partners in Science
             </h2>
           </div>
 
           <div className='row g-4'>
             <div className='col-lg-6'>
-              <h3 className='h4 mb-4'>Our Technical Team</h3>
+              <h3 className='h5 fw-semibold mb-2'>Our Technical Team</h3>
               <p className='text-muted mb-4'>
                 Our PhD-level scientists and engineers bring decades of combined
                 experience in laboratory instrumentation and quality control.
@@ -174,24 +197,23 @@ const AboutUs = () => {
             </div>
 
             <div className='col-lg-6'>
-              <h3 className='h4 mb-4'>Accreditations</h3>
               <div className='row g-3'>
                 {[
                   {
-                    icon: <ShieldCheck size={48} className='text-success' />,
+                    icon: <ShieldCheck size={38} className='text-success' />,
                     label: 'ISO Certified',
                   },
                   {
-                    icon: <FileSearch size={48} className='text-primary' />,
+                    icon: <FileSearch size={38} className='text-primary' />,
                     label: 'CE Marked',
                   },
                   {
-                    icon: <ClipboardCheck size={48} className='text-warning' />,
+                    icon: <ClipboardCheck size={38} className='text-warning' />,
                     label: 'FDA Approved',
                   },
                 ].map((cert, index) => (
                   <div key={index} className='col-4'>
-                    <div className='bg-light p-3 rounded-3 text-center h-100 d-flex flex-column align-items-center justify-content-center'>
+                    <div className='card bg-light p-3 rounded-3 text-center h-100 d-flex flex-column align-items-center justify-content-center'>
                       {cert.icon}
                       <small className='mt-2 text-muted'>{cert.label}</small>
                     </div>
@@ -203,11 +225,21 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className='py-5 bg-light'>
-        <div className='container py-5'>
-          <h2 className='display-5 fw-bold mb-5 text-center'>
+      <section className='bg-light'>
+        <div className='container'>
+          <h2
+            className='display-6 fw-bold mb-4 text-center'
+            style={{
+              background: 'linear-gradient(to right, #222, #1a237e)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              MozBackgroundClip: 'text',
+              MozTextFillColor: 'transparent',
+            }}
+          >
             Trusted By Research Leaders
           </h2>
+
           <div className='row g-4'>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className='col-md-6 col-lg-3'>
@@ -215,7 +247,7 @@ const AboutUs = () => {
                   <div className='card-body p-4 text-center'>
                     <div className='mx-auto mb-3'>
                       <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                        <User className='text-gray-500' size={40} />
+                        <User className='text-gray-500' size={32} />
                       </div>
                     </div>
                     <div className='mb-3 text-warning'>

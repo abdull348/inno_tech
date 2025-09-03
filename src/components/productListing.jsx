@@ -14,7 +14,7 @@ const ProductDetail = () => {
 
   return (
     <>
-      <section className='py-4 bg-light'>
+      <section className='py-3 bg-light'>
         <div
           className='container d-flex justify-content-center align-items-center'
           style={{ minHeight: '60px' }}
@@ -68,12 +68,11 @@ const ProductDetail = () => {
 
             <div className='col-lg-6'>
               <div style={{ top: '20px' }}>
-                <h1 className='fw-bold mb-3'>{product.name}</h1>
-                <div className='mt-5'>
-                  <h3 className='fw-bold mb-4 pb-2 border-bottom'>
-                    Technical Specifications
-                  </h3>
-                  <div className='bg-white p-4 rounded-3 shadow-sm'>
+                <h2 className='fw-semibold display-7 mb-4 pb-2 border-bottom'>
+                  {product.name}
+                </h2>
+                <div className='mt-3'>
+                  <div className='bg-white p-0 p-lg-4 rounded-3 shadow-sm'>
                     <div className='row'>
                       {Object.entries(product.specs).map(
                         ([key, value], index) => (
@@ -106,26 +105,29 @@ const ProductDetail = () => {
 
                 <div className='d-flex gap-3 mb-4'>
                   <button
-                    className='btn btn-primary flex-grow-1 py-2 d-flex align-items-center justify-content-center'
-                    style={{ maxWidth: '250px' }}
+                    className='btn btn-primary flex-grow-1 btn-md px-4 py-2 d-flex align-items-center justify-content-center rounded-pill'
+                    style={{ maxWidth: '250px', fontWeight: '500' }}
                   >
                     <ShoppingCart size={18} className='me-2' />
                     Add to Inquiry
                   </button>
+
                   <button
-                    className='btn btn-outline-primary flex-grow-1 py-2'
-                    style={{ maxWidth: '250px' }}
+                    className='btn btn-outline-primary flex-grow-1 btn-md px-4 py-2 rounded-pill'
+                    style={{ maxWidth: '250px', fontWeight: '500' }}
                     onClick={(e) => {
                       e.stopPropagation();
-                      document.getElementById('contact').scrollIntoView();
+                      document
+                        .getElementById('contact')
+                        ?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
                     Request Quote
                   </button>
                 </div>
 
-                <div className='justify-content-center mt-4'>
-                  <div className='col-10 border-top pt-3'>
+                <div className='mt-4'>
+                  <div className='col-12 border-top pt-3'>
                     <h4 className='fw-bold mb-3'>Product Details</h4>
                     <p className='text-muted lh-lg'>{product.description}</p>
                   </div>
@@ -139,7 +141,7 @@ const ProductDetail = () => {
                   <div className='col-12'>
                     <div className='bg-white rounded-3 shadow-sm p-4'>
                       <h3 className='fw-bold mb-4 pb-2 border-bottom'>
-                        Technical Specifications Table
+                        Technical Specifications
                       </h3>
                       <div className='table-responsive'>
                         <table className='table table-bordered table-striped'>
@@ -226,7 +228,7 @@ const ProductDetail = () => {
                       )
                     }
                   >
-                    <div className='position-relative'>
+                    <div className='card position-relative'>
                       <img
                         src={item.image}
                         className='card-img-top'
@@ -234,35 +236,11 @@ const ProductDetail = () => {
                         style={{ objectFit: 'contain', cursor: 'pointer' }}
                       />
                       <h6
-                        className='card-title p-3'
+                        className='text-muted p-3 fw-normal'
                         style={{ minHeight: '48px' }}
                       >
-                        {item.name.length > 30
-                          ? `${item.name.slice(0, 30)}...`
-                          : item.name}
+                        {product.name}
                       </h6>
-                    </div>
-
-                    <div className='card-footer bg-transparent border-top-0 pt-0 pb-3 px-3'>
-                      <div className='d-flex justify-content-between align-items-center'>
-                        <button
-                          className='elegant-btn'
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            document.getElementById('contact').scrollIntoView();
-                          }}
-                        >
-                          Request Quote
-                        </button>
-                        <button
-                          className='btn btn-sm btn-outline-primary'
-                          onClick={(e) => {
-                            e.stopPropagation();
-                          }}
-                        >
-                          <ShoppingCart size={16} />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>

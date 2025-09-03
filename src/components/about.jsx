@@ -1,13 +1,12 @@
 import { FlaskConical, ShieldCheck, Globe, BarChart } from 'lucide-react';
-import AboutImage from '/assets/choose-us.webp';
+import AboutImage from '/assets/choose-us.jpg';
 
 const AboutUs = () => {
   const services = [
     {
       icon: <FlaskConical className='text-primary' size={24} />,
       title: 'Advanced Equipment Supply',
-      description:
-        'Full-spectrum laboratory solutions for research, clinical, and industrial applications',
+      description: 'Full-spectrum laboratory solutions for research',
     },
     {
       icon: <ShieldCheck className='text-primary' size={24} />,
@@ -29,29 +28,38 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className='py-5 bg-light' id='about'>
-      <div className='container py-4 py-lg-5'>
+    <section className='bg-light' id='about'>
+      <div className='container'>
         <div className='row align-items-center'>
-          <div className='col-lg-6 p-4 p-lg-5'>
+          <div className='col-lg-6 p-3 p-lg-5'>
             <div className='pe-lg-0'>
-              <h2 className='display-5 fw-bold mb-4'>
+              <h2
+                className='display-6 fw-bold mb-2'
+                style={{
+                  background: 'linear-gradient(to right, #222, #1a237e)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  MozBackgroundClip: 'text',
+                  MozTextFillColor: 'transparent',
+                }}
+              >
                 Scientific Solutions for Modern Laboratories
               </h2>
 
-              <div className='row g-4 mt-4'>
+              <div className='row g-3 mt-2'>
                 {services.map((service, index) => (
                   <div key={index} className='col-md-6'>
                     <div className='d-flex align-items-start'>
                       <div className='flex-shrink-0'>
                         <div
                           className='bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center'
-                          style={{ width: '40px', height: '40px' }}
+                          style={{ width: '36px', height: '36px' }}
                         >
                           {service.icon}
                         </div>
                       </div>
                       <div className='ms-3'>
-                        <h5 className='fw-semibold mb-1'>{service.title}</h5>
+                        <h6 className='fw-bold mb-1'>{service.title}</h6>
                         <p className='text-muted mb-0'>{service.description}</p>
                       </div>
                     </div>
@@ -61,26 +69,35 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className='col-lg-6 d-flex align-items-center justify-content-center p-4 p-lg-5'>
-            <div className='position-relative'>
+          <div className='col-lg-6 d-flex justify-content-center'>
+            <div className='position-relative w-100'>
               <img
                 src={AboutImage}
                 alt='Laboratory Equipment'
-                className='img-fluid rounded-3 shadow-lg mx-auto'
-                style={{ maxWidth: '90%', height: 'auto' }}
+                className='img-fluid rounded-3 shadow-lg'
+                style={{
+                  width: '100%',
+                  maxWidth: '500px',
+                  display: 'block',
+                  margin: '0 auto',
+                }}
               />
-              <div className='position-absolute bottom-0 start-0 bg-white p-3 m-3 rounded-2 shadow-sm'>
+              <div
+                className='position-absolute bottom-0 start-50 translate-middle-x bg-white px-3 py-2 rounded-2 shadow'
+                style={{
+                  width: '90%',
+                  maxWidth: '290px',
+                }}
+              >
                 <div className='d-flex align-items-center'>
-                  <div className='flex-shrink-0'>
-                    <div
-                      className='bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2'
-                      style={{ width: '40px', height: '40px' }}
-                    >
-                      <FlaskConical size={20} />
-                    </div>
+                  <div
+                    className='bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3'
+                    style={{ width: '36px', height: '36px' }}
+                  >
+                    <FlaskConical size={18} />
                   </div>
                   <div>
-                    <h6 className='mb-0'>Since 2014</h6>
+                    <h6 className='mb-0 fw-semibold'>Since 2014</h6>
                     <small className='text-muted'>
                       Advancing scientific discovery
                     </small>
