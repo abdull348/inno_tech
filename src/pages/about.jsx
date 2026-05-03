@@ -15,6 +15,17 @@ import { Link } from 'react-router-dom';
 import aboutlab from '/assets/about-lab.jpg';
 import chooseUs from '/assets/choose-us.jpg';
 import AnimatedText from '../components/animatedText';
+import SEO from '../components/seo';
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About InnoTech Technologies',
+  url: 'https://innotechtechnologies.us/about',
+  description:
+    'Founded in 2014, InnoTech Technologies is a US-based supplier of precision laboratory equipment serving 500+ research institutions across 30+ countries.',
+  mainEntity: { '@id': 'https://innotechtechnologies.us/#organization' },
+};
 
 const heroStats = [
   { num: '500+', label: 'Institutions Served' },
@@ -101,6 +112,16 @@ const teamPoints = [
 const AboutUs = () => {
   return (
     <>
+      <SEO
+        title='About InnoTech — 10+ Years of Lab Equipment Excellence'
+        description='Founded in 2014 in Lenexa, Kansas, InnoTech Technologies serves 500+ research institutions with ISO-certified lab equipment, US-based engineering, and 24/7 technical support across 30+ countries.'
+        path='/about'
+        jsonLd={aboutJsonLd}
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' },
+        ]}
+      />
       <section className='it-page-hero'>
         <div className='container'>
           <AnimatedText>

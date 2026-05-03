@@ -327,6 +327,62 @@ circle {
   }
 }
 
+/* ===== FAQ Accordion ===== */
+.it-faq-item {
+  background: #fff;
+  border: 1px solid var(--it-border);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.it-faq-item.open {
+  border-color: rgba(0, 102, 204, 0.35);
+  box-shadow: 0 8px 24px -16px rgba(10, 31, 68, 0.18);
+}
+.it-faq-q {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 1.1rem 1.25rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--it-ink);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.it-faq-q:hover {
+  color: var(--it-blue);
+}
+.it-faq-toggle {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--it-blue-soft);
+  color: var(--it-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.it-faq-item.open .it-faq-toggle {
+  background: var(--it-blue);
+  color: #fff;
+  transform: rotate(180deg);
+}
+.it-faq-a {
+  padding: 0 1.25rem 1.25rem;
+  color: var(--it-text);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
 /* ===== Premium / US-style design system ===== */
 .it-eyebrow {
   display: inline-flex;

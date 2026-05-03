@@ -67,7 +67,7 @@ const AboutUs = () => {
                 />
               </div>
 
-              <div
+              {/* <div
                 className='it-float-card d-none d-md-flex'
                 style={{ top: '24px', left: '-18px' }}
               >
@@ -78,7 +78,7 @@ const AboutUs = () => {
                   <div className='num'>Since 2014</div>
                   <div className='label'>10+ years of expertise</div>
                 </div>
-              </div>
+              </div> */}
 
               <div
                 className='it-float-card d-none d-md-flex'

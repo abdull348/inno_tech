@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 import products from '../productData.js';
 import AnimatedText from './animatedText';
+import SEO from './seo';
+
+const SITE = 'https://innotechtechnologies.us';
 
 const deriveCategory = (name = '') => {
   const n = name.toLowerCase();
@@ -87,8 +90,66 @@ const ProductDetail = () => {
       .getElementById('contact')
       ?.scrollIntoView({ behavior: 'smooth' });
 
+  const seoDescription = (
+    product.description?.replace(/\s+/g, ' ').trim().slice(0, 160) ||
+    `${product.name} — precision lab equipment from InnoTech Technologies.`
+  );
+
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: `${SITE}${product.image}`,
+    description: product.description?.replace(/\s+/g, ' ').trim() || product.name,
+    sku: product.specs?.Model || `inno-${product.id}`,
+    mpn: product.specs?.Model || undefined,
+    category,
+    brand: {
+      '@type': 'Brand',
+      name: 'InnoTech Technologies',
+    },
+    manufacturer: {
+      '@id': `${SITE}/#organization`,
+    },
+    additionalProperty: product.specs
+      ? Object.entries(product.specs)
+          .filter(([, v]) => v && v !== 'N/A')
+          .map(([k, v]) => ({
+            '@type': 'PropertyValue',
+            name: k,
+            value: String(v),
+          }))
+      : [],
+    offers: {
+      '@type': 'Offer',
+      url: `${SITE}/products/${slugify(product.name)}`,
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        description: 'Contact for quote',
+      },
+      seller: { '@id': `${SITE}/#organization` },
+    },
+  };
+
   return (
     <>
+      <SEO
+        title={`${product.name} — ${category}`}
+        description={seoDescription}
+        path={`/products/${slugify(product.name)}`}
+        image={`${SITE}${product.image}`}
+        type='product'
+        jsonLd={productJsonLd}
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Products', path: '/products' },
+          { name: category, path: '/products' },
+          { name: product.name, path: `/products/${slugify(product.name)}` },
+        ]}
+      />
       <section className='it-detail-bar'>
         <div className='container'>
           <div className='d-flex align-items-center justify-content-between gap-3 flex-wrap'>

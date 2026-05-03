@@ -16,6 +16,35 @@ import {
 import { Link } from 'react-router-dom';
 import labtechnician from '/assets/lab-technitian.webp';
 import AnimatedText from '../components/animatedText';
+import SEO from '../components/seo';
+
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'InnoTech Lab Equipment Services',
+  serviceType: 'Laboratory Equipment Supply, Installation, Calibration, and Support',
+  provider: { '@id': 'https://innotechtechnologies.us/#organization' },
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'Canada' },
+    { '@type': 'Country', name: 'Mexico' },
+  ],
+  url: 'https://innotechtechnologies.us/services',
+  description:
+    'End-to-end lab equipment services: equipment supply, installation, calibration, validation (IQ/OQ/PQ), maintenance, training, and OEM partnerships.',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Service Lines',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Equipment Supply' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Installation & Setup' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Calibration & Validation' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Maintenance & Repair' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Training Programs' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'OEM Partnerships' } },
+    ],
+  },
+};
 
 const serviceOfferings = [
   {
@@ -147,6 +176,16 @@ const features = [
 const ServicesPage = () => {
   return (
     <>
+      <SEO
+        title='Lab Equipment Services — Installation, Calibration & Support'
+        description='InnoTech provides end-to-end lab equipment services: supply, installation, IQ/OQ/PQ calibration, maintenance, and operator training. US-based engineers, 48-hour emergency dispatch, ISO 9001 certified.'
+        path='/services'
+        jsonLd={servicesJsonLd}
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+        ]}
+      />
       <section className='it-page-hero'>
         <div className='container'>
           <AnimatedText>

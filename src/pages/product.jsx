@@ -14,7 +14,32 @@ import {
 } from 'lucide-react';
 import products from '../productData.js';
 import AnimatedText from '../components/animatedText';
+import SEO from '../components/seo';
 import '../index.css';
+
+const SITE = 'https://innotechtechnologies.us';
+
+const slugifyForJsonLd = (s) => s.replace(/\s+/g, '-').toLowerCase();
+
+const productsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'InnoTech Laboratory Equipment Catalog',
+  url: `${SITE}/products`,
+  description:
+    'Browse the InnoTech Technologies catalog: centrifuges, ultra-low freezers, autoclaves, spectrophotometers, pH meters, liquid nitrogen containers, and more.',
+  isPartOf: { '@id': `${SITE}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: products.length,
+    itemListElement: products.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE}/products/${slugifyForJsonLd(p.name)}`,
+      name: p.name,
+    })),
+  },
+};
 
 const deriveCategory = (name = '') => {
   const n = name.toLowerCase();
@@ -106,6 +131,16 @@ const Products = () => {
 
   return (
     <>
+      <SEO
+        title='Lab Equipment Catalog — Centrifuges, Freezers, Spectrophotometers'
+        description='Browse the InnoTech catalog of precision lab equipment for US research, diagnostics, and biotech. Centrifuges, ultra-low freezers, autoclaves, spectrophotometers, pH meters, and more — ISO certified with US-based support.'
+        path='/products'
+        jsonLd={productsJsonLd}
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Products', path: '/products' },
+        ]}
+      />
       <section className='it-page-hero'>
         <div className='container'>
           <AnimatedText>
