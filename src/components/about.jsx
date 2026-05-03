@@ -1,111 +1,177 @@
-import { FlaskConical, ShieldCheck, Globe, BarChart } from 'lucide-react';
+import {
+  FlaskConical,
+  ShieldCheck,
+  Globe,
+  BarChart,
+  ArrowUpRight,
+  Award,
+  BadgeCheck,
+} from 'lucide-react';
 import AboutImage from '/assets/choose-us.jpg';
+import AnimatedText from './animatedText';
+
+const features = [
+  {
+    icon: <FlaskConical size={20} />,
+    title: 'Advanced Equipment Supply',
+    description:
+      'Full-spectrum laboratory instruments, from sample prep to high-precision analysis.',
+  },
+  {
+    icon: <ShieldCheck size={20} />,
+    title: 'Certified Quality Assurance',
+    description:
+      'ISO-certified, FDA-compliant equipment with full documentation and traceability.',
+  },
+  {
+    icon: <Globe size={20} />,
+    title: 'Global Technical Support',
+    description:
+      '24/7 multilingual support backed by US-based engineers and field service teams.',
+  },
+  {
+    icon: <BarChart size={20} />,
+    title: 'Performance Optimization',
+    description:
+      'On-site calibration and validation services to keep your lab running at peak.',
+  },
+];
+
+const stats = [
+  { num: '500', plus: '+', label: 'Institutions Served' },
+  { num: '30', plus: '+', label: 'Countries Worldwide' },
+  { num: '10', plus: '+', label: 'Years of Expertise' },
+  { num: '98', plus: '%', label: 'Client Retention' },
+];
 
 const AboutUs = () => {
-  const services = [
-    {
-      icon: <FlaskConical className='text-primary' size={24} />,
-      title: 'Advanced Equipment Supply',
-      description: 'Full-spectrum laboratory solutions for research',
-    },
-    {
-      icon: <ShieldCheck className='text-primary' size={24} />,
-      title: 'Certified Quality Assurance',
-      description: 'ISO Certified - compliant equipment with full traceability',
-    },
-    {
-      icon: <Globe className='text-primary' size={24} />,
-      title: 'Global Technical Support',
-      description:
-        '24/7 multilingual support network with field service engineers',
-    },
-    {
-      icon: <BarChart className='text-primary' size={24} />,
-      title: 'Performance Optimization',
-      description:
-        'Equipment calibration and validation services for peak performance',
-    },
-  ];
-
   return (
-    <section className='bg-light' id='about'>
-      <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col-lg-6 p-3 p-lg-5'>
-            <div className='pe-lg-0'>
-              <h2
-                className='display-6 fw-bold mb-2'
-                style={{
-                  background: 'linear-gradient(to right, #222, #1a237e)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  MozBackgroundClip: 'text',
-                  MozTextFillColor: 'transparent',
-                }}
-              >
-                Scientific Solutions for Modern Laboratories
-              </h2>
-
-              <div className='row g-3 mt-2'>
-                {services.map((service, index) => (
-                  <div key={index} className='col-md-6'>
-                    <div className='d-flex align-items-start'>
-                      <div className='flex-shrink-0'>
-                        <div
-                          className='bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center'
-                          style={{ width: '36px', height: '36px' }}
-                        >
-                          {service.icon}
-                        </div>
-                      </div>
-                      <div className='ms-3'>
-                        <h6 className='fw-bold mb-1'>{service.title}</h6>
-                        <p className='text-muted mb-0'>{service.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className='col-lg-6 d-flex justify-content-center'>
-            <div className='position-relative w-100'>
-              <img
-                src={AboutImage}
-                alt='Laboratory Equipment'
-                className='img-fluid rounded-3 shadow-lg'
-                style={{
-                  width: '100%',
-                  maxWidth: '500px',
-                  display: 'block',
-                  margin: '0 auto',
-                }}
+    <section className='it-section-pad bg-white position-relative' id='about'>
+      <div className='container position-relative'>
+        <div className='row align-items-center g-5'>
+          <div className='col-lg-6'>
+            <div className='position-relative'>
+              <span
+                className='it-img-dots d-none d-md-block'
+                style={{ top: '-26px', left: '-26px' }}
               />
+              <span
+                className='it-img-dots d-none d-md-block'
+                style={{ bottom: '-26px', right: '-26px' }}
+              />
+
+              <div className='it-img-frame'>
+                <img
+                  src={AboutImage}
+                  alt='InnoTech Laboratory Equipment'
+                />
+              </div>
+
               <div
-                className='position-absolute bottom-0 start-50 translate-middle-x bg-white px-3 py-2 rounded-2 shadow'
-                style={{
-                  width: '90%',
-                  maxWidth: '290px',
-                }}
+                className='it-float-card d-none d-md-flex'
+                style={{ top: '24px', left: '-18px' }}
               >
-                <div className='d-flex align-items-center'>
-                  <div
-                    className='bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3'
-                    style={{ width: '36px', height: '36px' }}
-                  >
-                    <FlaskConical size={18} />
-                  </div>
-                  <div>
-                    <h6 className='mb-0 fw-semibold'>Since 2014</h6>
-                    <small className='text-muted'>
-                      Advancing scientific discovery
-                    </small>
-                  </div>
+                <div className='icon'>
+                  <Award size={20} />
+                </div>
+                <div>
+                  <div className='num'>Since 2014</div>
+                  <div className='label'>10+ years of expertise</div>
+                </div>
+              </div>
+
+              <div
+                className='it-float-card d-none d-md-flex'
+                style={{ bottom: '28px', right: '-18px' }}
+              >
+                <div className='icon cyan'>
+                  <BadgeCheck size={20} />
+                </div>
+                <div>
+                  <div className='num'>ISO Certified</div>
+                  <div className='label'>FDA · CE · ISO 9001</div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div className='col-lg-6'>
+            <AnimatedText>
+              <span className='it-eyebrow mb-3'>About InnoTech</span>
+            </AnimatedText>
+
+            <AnimatedText delay={0.1}>
+              <h2 className='display-5 it-heading mb-3'>
+                Scientific Solutions Built for{' '}
+                <span className='it-heading-grad'>Modern US Laboratories</span>
+              </h2>
+            </AnimatedText>
+
+            <AnimatedText delay={0.18}>
+              <div className='it-divider mb-3' />
+            </AnimatedText>
+
+            <AnimatedText delay={0.22}>
+              <p
+                className='mb-4'
+                style={{
+                  color: 'var(--it-muted)',
+                  fontSize: '1.02rem',
+                  lineHeight: 1.7,
+                }}
+              >
+                We partner with research institutions, hospitals, and biotech
+                innovators across the United States to deliver precision lab
+                equipment, validated performance, and the on-the-ground service
+                that keeps critical work moving.
+              </p>
+            </AnimatedText>
+
+            <div className='mb-4'>
+              {features.map((f, i) => (
+                <AnimatedText key={i} delay={0.05 * i}>
+                  <div className='feature-item'>
+                    <div className='feature-icon'>{f.icon}</div>
+                    <div>
+                      <div className='feature-title'>{f.title}</div>
+                      <p className='feature-desc'>{f.description}</p>
+                    </div>
+                  </div>
+                </AnimatedText>
+              ))}
+            </div>
+
+            <AnimatedText delay={0.1}>
+              <button
+                className='btn-it-primary'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  document
+                    .getElementById('contact')
+                    ?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Talk to a Specialist
+                <ArrowUpRight size={16} />
+              </button>
+            </AnimatedText>
+          </div>
+        </div>
+
+        <div className='row g-4 mt-5 pt-4'>
+          {stats.map((s, i) => (
+            <div key={i} className='col-6 col-lg-3'>
+              <AnimatedText delay={0.05 * i}>
+                <div className='stat-block'>
+                  <div className='stat-num'>
+                    {s.num}
+                    <span className='plus'>{s.plus}</span>
+                  </div>
+                  <div className='stat-label'>{s.label}</div>
+                </div>
+              </AnimatedText>
+            </div>
+          ))}
         </div>
       </div>
     </section>

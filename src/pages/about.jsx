@@ -3,273 +3,465 @@ import {
   ShieldCheck,
   Globe,
   CheckCircle,
-  FileSearch,
-  ClipboardCheck,
-  Star,
-  User,
+  Award,
+  BadgeCheck,
+  Users,
+  Lightbulb,
+  Target,
+  ArrowUpRight,
+  ChevronRight,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import aboutlab from '/assets/about-lab.jpg';
+import chooseUs from '/assets/choose-us.jpg';
 import AnimatedText from '../components/animatedText';
 
-const AboutUs = () => {
-  const testimonials = [
-    {
-      id: 1,
-      quote:
-        'The centrifuge maintains perfect balance even at 15,000 RPM. Exceptional precision for our cell research.',
-      name: 'Dr. Sarah Chen',
-      affiliation: 'MIT Bioengineering',
-      rating: 5,
-    },
-    {
-      id: 2,
-      quote:
-        'Their sterilization equipment reduced our lab contamination rate by 62%. Game-changing reliability.',
-      name: 'Prof. James Wilson',
-      affiliation: 'Stanford Medical',
-      rating: 5,
-    },
-    {
-      id: 3,
-      quote:
-        'The -80°C freezer maintains perfect temperature stability, even during power fluctuations.',
-      name: 'Dr. Priya Patel',
-      affiliation: 'Mayo Clinic Labs',
-      rating: 5,
-    },
-    {
-      id: 4,
-      quote:
-        'Their technical team diagnosed our spectrometer issue remotely in under 15 minutes. Brilliant support!',
-      name: 'Dr. Michael Okafor',
-      affiliation: 'NIH Research Center',
-      rating: 5,
-    },
-  ];
+const heroStats = [
+  { num: '500+', label: 'Institutions Served' },
+  { num: '30+', label: 'Countries Worldwide' },
+  { num: '10+', label: 'Years of Expertise' },
+  { num: '98%', label: 'Client Retention' },
+];
 
+const coreValues = [
+  {
+    icon: <FlaskConical size={22} />,
+    title: 'Scientific Integrity',
+    description:
+      'Equipment that meets strict research standards — every unit calibrated, validated, and traceable.',
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: 'Quality Assurance',
+    description:
+      'ISO-certified manufacturing partnerships and full documentation on every shipment.',
+  },
+  {
+    icon: <Globe size={22} />,
+    title: 'Global Impact',
+    description:
+      'Serving 500+ institutions across 30+ countries from our US headquarters in Lenexa, KS.',
+  },
+  {
+    icon: <Lightbulb size={22} />,
+    title: 'Continuous Innovation',
+    description:
+      'In-house R&D and OEM partnerships ensure access to the latest precision instruments.',
+  },
+];
+
+const milestones = [
+  {
+    year: '2014',
+    title: 'Founded in Lenexa, KS',
+    description:
+      'InnoTech Technologies opens its doors with a mission to bring precision lab equipment to US research institutions.',
+  },
+  {
+    year: '2017',
+    title: 'ISO 9001 Certification',
+    description:
+      'Achieved ISO 9001 quality management certification, formalizing our commitment to traceable quality.',
+  },
+  {
+    year: '2019',
+    title: '100+ Institutional Partners',
+    description:
+      'Crossed the 100-institution mark across the United States, with expanding service in pharma and biotech.',
+  },
+  {
+    year: '2021',
+    title: 'Global Logistics Network',
+    description:
+      'Launched 48-hour emergency dispatch with regional warehouses and on-site service engineers.',
+  },
+  {
+    year: '2024',
+    title: '500+ Labs · 30+ Countries',
+    description:
+      'Trusted by leading research institutions, hospitals, and biotech innovators worldwide.',
+  },
+];
+
+const certifications = [
+  { icon: <ShieldCheck size={28} />, label: 'ISO 9001', sub: 'Quality Management' },
+  { icon: <BadgeCheck size={28} />, label: 'CE Marked', sub: 'European Conformity' },
+  { icon: <Award size={28} />, label: 'FDA Compliant', sub: 'US Regulatory' },
+  { icon: <Target size={28} />, label: 'IEC Standards', sub: 'Electrical Safety' },
+];
+
+const teamPoints = [
+  '10+ years specializing in precision instruments',
+  'In-house R&D team developing cutting-edge technology',
+  'PhD-level scientists and engineers on staff',
+  'Dedicated calibration and validation specialists',
+  'OEM partnerships with leading manufacturers',
+];
+
+const AboutUs = () => {
   return (
     <>
-      <section
-        className='py-3 bg-secondary text-white'
-        style={{ background: 'linear-gradient(135deg, #0056b3, #003366)' }}
-      >
-        <div className='container py-4 py-lg-5'>
-          <div className='row align-items-center'>
+      <section className='it-page-hero'>
+        <div className='container'>
+          <AnimatedText>
+            <nav className='it-breadcrumb mb-3'>
+              <Link to='/'>Home</Link>
+              <ChevronRight size={14} className='it-breadcrumb-sep' />
+              <span className='current'>About</span>
+            </nav>
+          </AnimatedText>
+
+          <div className='row align-items-end g-4'>
             <div className='col-lg-7'>
-              <h1 className='display-4 fw-bold mb-4'>
-                Advancing Science Since{' '}
-                <span className='text-warning'>2014</span>
-              </h1>
-              <p className='lead mb-4'>
-                InnoTech Technologies has been at the forefront of laboratory
-                innovation, providing precision instruments to research
-                institutions worldwide.
-              </p>
+              <AnimatedText delay={0.05}>
+                <span className='it-eyebrow dark mb-3'>About InnoTech</span>
+              </AnimatedText>
+              <AnimatedText delay={0.1}>
+                <h1 className='display-4 mb-3'>
+                  Built for Science.
+                  <br />
+                  Backed by <span className='accent'>US Engineering.</span>
+                </h1>
+              </AnimatedText>
+              <AnimatedText delay={0.18}>
+                <p className='lead mb-0' style={{ maxWidth: '620px' }}>
+                  Since 2014 we&apos;ve been the trusted lab equipment partner
+                  for research institutions, hospitals, and biotech innovators
+                  across the United States and beyond.
+                </p>
+              </AnimatedText>
+            </div>
+
+            <div className='col-lg-5'>
+              <div className='row g-3'>
+                {heroStats.map((s, i) => (
+                  <div key={i} className='col-6'>
+                    <AnimatedText delay={0.05 * i}>
+                      <div
+                        style={{
+                          background: 'rgba(255,255,255,0.06)',
+                          border: '1px solid rgba(255,255,255,0.14)',
+                          borderRadius: '12px',
+                          padding: '1rem',
+                          backdropFilter: 'blur(8px)',
+                        }}
+                      >
+                        <div
+                          style={{
+                            color: '#fff',
+                            fontWeight: 800,
+                            fontSize: '1.6rem',
+                            letterSpacing: '-0.02em',
+                          }}
+                        >
+                          {s.num}
+                        </div>
+                        <div
+                          style={{
+                            color: 'rgba(255,255,255,0.7)',
+                            fontSize: '0.78rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.08em',
+                            marginTop: '0.25rem',
+                          }}
+                        >
+                          {s.label}
+                        </div>
+                      </div>
+                    </AnimatedText>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className='bg-light'>
+      <section className='it-section-pad bg-white'>
         <div className='container'>
-          <div className='text-center mb-5'>
-            <h2
-              className='display-6 fw-bold mb-2'
-              style={{
-                background: 'linear-gradient(to right, #222, #1a237e)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                MozBackgroundClip: 'text',
-                MozTextFillColor: 'transparent',
-              }}
-            >
-              Our Core Principles
-            </h2>
-            <div className='mx-auto' style={{ maxWidth: '700px' }}>
-              <p className='lead text-muted'>
-                Driving scientific progress through uncompromising quality and
-                innovation
-              </p>
+          <div className='row align-items-center g-5'>
+            <div className='col-lg-6'>
+              <div className='position-relative'>
+                <span
+                  className='it-img-dots d-none d-md-block'
+                  style={{ top: '-26px', left: '-26px' }}
+                />
+                <div className='it-img-frame'>
+                  <img
+                    src={chooseUs}
+                    alt='InnoTech Laboratory Equipment'
+                  />
+                </div>
+
+                <div
+                  className='it-float-card d-none d-md-flex'
+                  style={{ bottom: '24px', right: '-18px' }}
+                >
+                  <div className='icon cyan'>
+                    <Users size={20} />
+                  </div>
+                  <div>
+                    <div className='num'>PhD-Led Team</div>
+                    <div className='label'>Scientists &amp; engineers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='col-lg-6'>
+              <AnimatedText>
+                <span className='it-eyebrow mb-3'>Our Story</span>
+              </AnimatedText>
+              <AnimatedText delay={0.1}>
+                <h2 className='display-5 it-heading mb-3'>
+                  A Decade of <span className='it-heading-grad'>Precision</span>
+                </h2>
+              </AnimatedText>
+              <AnimatedText delay={0.18}>
+                <div className='it-divider mb-3' />
+              </AnimatedText>
+              <AnimatedText delay={0.22}>
+                <p
+                  style={{
+                    color: 'var(--it-muted)',
+                    fontSize: '1.02rem',
+                    lineHeight: 1.7,
+                  }}
+                  className='mb-3'
+                >
+                  Founded in 2014 in Lenexa, Kansas, InnoTech Technologies
+                  began with a simple conviction — that US labs deserved a
+                  partner who treated equipment supply as engineering, not
+                  retail.
+                </p>
+              </AnimatedText>
+              <AnimatedText delay={0.28}>
+                <p
+                  style={{
+                    color: 'var(--it-muted)',
+                    fontSize: '1.02rem',
+                    lineHeight: 1.7,
+                  }}
+                  className='mb-4'
+                >
+                  Ten years on, we&apos;ve grown into a trusted source for
+                  centrifuges, freezers, sterilizers, spectrophotometers, and
+                  the full spectrum of precision instruments — backed by
+                  US-based technical support and a dedicated calibration team.
+                </p>
+              </AnimatedText>
+
+              <ul className='list-unstyled mb-4'>
+                {teamPoints.map((p, i) => (
+                  <AnimatedText key={i} delay={0.04 * i}>
+                    <li className='d-flex align-items-start gap-3 mb-2'>
+                      <CheckCircle
+                        size={18}
+                        style={{ color: 'var(--it-blue)', marginTop: '3px' }}
+                      />
+                      <span
+                        style={{
+                          color: 'var(--it-text)',
+                          fontWeight: 500,
+                          lineHeight: 1.55,
+                        }}
+                      >
+                        {p}
+                      </span>
+                    </li>
+                  </AnimatedText>
+                ))}
+              </ul>
+
+              <AnimatedText>
+                <button
+                  className='btn-it-primary'
+                  onClick={() =>
+                    document
+                      .getElementById('contact')
+                      ?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                >
+                  Talk to a Specialist
+                  <ArrowUpRight size={16} />
+                </button>
+              </AnimatedText>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className='it-section-pad it-section-soft'>
+        <div className='container'>
+          <div className='text-center mb-5'>
+            <AnimatedText>
+              <span className='it-eyebrow mb-3'>What Drives Us</span>
+            </AnimatedText>
+            <AnimatedText delay={0.1}>
+              <h2 className='display-5 it-heading mb-2'>
+                Our <span className='it-heading-grad'>Core Principles</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.18}>
+              <p
+                className='mx-auto mb-0'
+                style={{
+                  color: 'var(--it-muted)',
+                  fontSize: '1.02rem',
+                  maxWidth: '640px',
+                  lineHeight: 1.65,
+                }}
+              >
+                Driving scientific progress through uncompromising quality,
+                disciplined engineering, and dedicated US-based service.
+              </p>
+            </AnimatedText>
+          </div>
+
           <div className='row g-4'>
-            {[
-              {
-                icon: <FlaskConical size={28} className='text-primary' />,
-                title: 'Scientific Integrity',
-                description: 'Equipment that meets strict research standards',
-              },
-              {
-                icon: <ShieldCheck size={28} className='text-primary' />,
-                title: 'Quality Assurance',
-                description: 'ISO-certified manufacturing processes',
-              },
-              {
-                icon: <Globe size={28} className='text-primary' />,
-                title: 'Global Impact',
-                description: 'Serving 500+ institutions across 30 countries',
-              },
-            ].map((item, index) => (
-              <div key={index} className='col-md-4 shadow-sm hover-shadow '>
-                <div className='text-center p-4 h-100'>
-                  <div className='bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-flex'>
-                    {item.icon}
+            {coreValues.map((v, i) => (
+              <div key={i} className='col-md-6 col-lg-3'>
+                <AnimatedText delay={0.05 * i}>
+                  <div className='it-service-card'>
+                    <div className='it-service-icon'>{v.icon}</div>
+                    <div className='it-service-title'>{v.title}</div>
+                    <p className='it-service-desc'>{v.description}</p>
                   </div>
-                  <h3 className='h5 mb-2'>{item.title}</h3>
-                  <p className='text-muted mb-0'>{item.description}</p>
-                </div>
+                </AnimatedText>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className='bg-light'>
+      <section className='it-section-pad bg-white'>
         <div className='container'>
-          <div className='row align-items-center'>
-            <div className='col-lg-6 order-lg-2 mb-4 mb-lg-0'>
-              <h2 className='display-6 fw-bold mb-3'>
-                <span className='text-primary'>Technical Excellence</span> in
-                Lab Solutions
-              </h2>
-
-              <ul className='list-unstyled'>
-                {[
-                  '10+ years specializing in precision instruments',
-                  'In-house R&D team developing cutting-edge technology',
-                  'Dedicated calibration and validation specialists',
-                  'OEM partnerships with leading manufacturers',
-                ].map((item, index) => (
-                  <li key={index} className='d-flex mb-3'>
-                    <CheckCircle className='text-success me-2 mt-1' size={20} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className='row g-5 align-items-center'>
+            <div className='col-lg-5'>
+              <AnimatedText>
+                <span className='it-eyebrow mb-3'>Our Journey</span>
+              </AnimatedText>
+              <AnimatedText delay={0.1}>
+                <h2 className='display-5 it-heading mb-3'>
+                  A Decade of{' '}
+                  <span className='it-heading-grad'>Milestones</span>
+                </h2>
+              </AnimatedText>
+              <AnimatedText delay={0.18}>
+                <div className='it-divider mb-3' />
+              </AnimatedText>
+              <AnimatedText delay={0.22}>
+                <p
+                  style={{
+                    color: 'var(--it-muted)',
+                    fontSize: '1.02rem',
+                    lineHeight: 1.7,
+                  }}
+                  className='mb-4'
+                >
+                  From a single Kansas warehouse to a global supplier serving
+                  500+ institutions — every step earned through reliability,
+                  service, and relentless attention to detail.
+                </p>
+              </AnimatedText>
+              <AnimatedText>
+                <img
+                  src={aboutlab}
+                  alt='Lab equipment at InnoTech'
+                  className='img-fluid rounded-4 shadow-lg'
+                  style={{ maxHeight: '320px', objectFit: 'cover', width: '100%' }}
+                />
+              </AnimatedText>
             </div>
-            <div className='col-lg-6 order-lg-1 d-flex align-items-center justify-content-center'>
-              <img
-                src={aboutlab}
-                alt='Laboratory Equipment'
-                className='img-fluid rounded-3 shadow mx-auto responsive-img'
-              />
+            <div className='col-lg-7'>
+              <div className='it-timeline'>
+                {milestones.map((m, i) => (
+                  <AnimatedText key={i} delay={0.05 * i}>
+                    <div className='it-timeline-item'>
+                      <span className='it-timeline-dot' />
+                      <div className='it-timeline-year'>{m.year}</div>
+                      <div className='it-timeline-title'>{m.title}</div>
+                      <p className='it-timeline-desc'>{m.description}</p>
+                    </div>
+                  </AnimatedText>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className='bg-white'>
+      <section className='it-section-pad it-section-soft'>
         <div className='container'>
           <div className='text-center mb-5'>
-            <h2
-              className='display-6 fw-bold mb-2'
-              style={{
-                background: 'linear-gradient(to right, #222, #1a237e)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                MozBackgroundClip: 'text',
-                MozTextFillColor: 'transparent',
-              }}
-            >
-              Trusted Partners in Science
-            </h2>
-          </div>
-
-          <div className='row g-4'>
-            <div className='col-lg-6'>
-              <h3 className='h5 fw-semibold mb-2'>Our Technical Team</h3>
-              <p className='text-muted mb-4'>
-                Our PhD-level scientists and engineers bring decades of combined
-                experience in laboratory instrumentation and quality control.
+            <AnimatedText>
+              <span className='it-eyebrow mb-3'>Trust &amp; Compliance</span>
+            </AnimatedText>
+            <AnimatedText delay={0.1}>
+              <h2 className='display-5 it-heading mb-2'>
+                Certified to{' '}
+                <span className='it-heading-grad'>International Standards</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.18}>
+              <p
+                className='mx-auto mb-0'
+                style={{
+                  color: 'var(--it-muted)',
+                  fontSize: '1.02rem',
+                  maxWidth: '640px',
+                  lineHeight: 1.65,
+                }}
+              >
+                Every product ships with full documentation, traceability, and
+                regulatory paperwork — peace of mind for every audit.
               </p>
-              <div className='d-flex flex-wrap gap-3'>
-                <AnimatedText>
-                  <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
-                    12 Certified Technicians
-                  </span>
-                </AnimatedText>
-                <AnimatedText>
-                  <span className='badge bg-primary bg-opacity-10 text-primary py-2 px-3'>
-                    24/7 Support Staff
-                  </span>
-                </AnimatedText>
-              </div>
-            </div>
-
-            <div className='col-lg-6'>
-              <div className='row g-3'>
-                {[
-                  {
-                    icon: <ShieldCheck size={38} className='text-success' />,
-                    label: 'ISO Certified',
-                  },
-                  {
-                    icon: <FileSearch size={38} className='text-primary' />,
-                    label: 'CE Marked',
-                  },
-                  {
-                    icon: <ClipboardCheck size={38} className='text-warning' />,
-                    label: 'FDA Approved',
-                  },
-                ].map((cert, index) => (
-                  <div key={index} className='col-4'>
-                    <div className='card bg-light p-3 rounded-3 text-center h-100 d-flex flex-column align-items-center justify-content-center'>
-                      {cert.icon}
-                      <small className='mt-2 text-muted'>{cert.label}</small>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </AnimatedText>
           </div>
-        </div>
-      </section>
-
-      <section className='bg-light'>
-        <div className='container'>
-          <h2
-            className='display-6 fw-bold mb-4 text-center'
-            style={{
-              background: 'linear-gradient(to right, #222, #1a237e)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              MozBackgroundClip: 'text',
-              MozTextFillColor: 'transparent',
-            }}
-          >
-            Trusted By Research Leaders
-          </h2>
 
           <div className='row g-4'>
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className='col-md-6 col-lg-3'>
-                <div className='card h-100 border-0 shadow-sm hover-shadow transition-all'>
-                  <div className='card-body p-4 text-center'>
-                    <div className='mx-auto mb-3'>
-                      <div className='bg-gray-100 rounded-circle p-3 d-inline-flex'>
-                        <User className='text-gray-500' size={32} />
-                      </div>
+            {certifications.map((c, i) => (
+              <div key={i} className='col-6 col-lg-3'>
+                <AnimatedText delay={0.05 * i}>
+                  <div
+                    className='bg-white rounded-4 p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center'
+                    style={{
+                      border: '1px solid var(--it-border)',
+                      transition: 'all 0.25s ease',
+                    }}
+                  >
+                    <div
+                      className='rounded-3 d-inline-flex align-items-center justify-content-center mb-3'
+                      style={{
+                        width: '64px',
+                        height: '64px',
+                        background:
+                          'linear-gradient(135deg, var(--it-blue-soft), #fff)',
+                        color: 'var(--it-blue)',
+                      }}
+                    >
+                      {c.icon}
                     </div>
-                    <div className='mb-3 text-warning'>
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          fill={
-                            i < Math.floor(testimonial.rating)
-                              ? 'currentColor'
-                              : ''
-                          }
-                        />
-                      ))}
+                    <div
+                      style={{
+                        fontWeight: 800,
+                        color: 'var(--it-ink)',
+                        fontSize: '1.05rem',
+                      }}
+                    >
+                      {c.label}
                     </div>
-                    <p className='mb-3 text-muted'>{testimonial.quote}</p>
-                    <h6 className='mb-1'>{testimonial.name}</h6>
-                    <small className='text-muted'>
-                      {testimonial.affiliation}
-                    </small>
+                    <div
+                      style={{
+                        color: 'var(--it-muted)',
+                        fontSize: '0.85rem',
+                        marginTop: '0.2rem',
+                      }}
+                    >
+                      {c.sub}
+                    </div>
                   </div>
-                </div>
+                </AnimatedText>
               </div>
             ))}
           </div>
