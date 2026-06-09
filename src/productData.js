@@ -18,13 +18,13 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       Speed: '20000 RPM',
       RCF: '27800 x g',
       'Temperature Range': '-20°C to 40°C',
+      Display: 'LCD Touch Screen',
       Capacity: '4 x 100 ml',
       'Timing Range': '1 ~ 99 min',
       'Temperature Accuracy': '± 2°C',
       'Speed Accuracy': '± 20 RPM',
       Acceleration: '1 ~ 10 Sec',
       Deceleration: '1 ~ 10 Sec',
-      Screen: 'LCD color screen',
       Voltage: 'AC 220V, 50/60Hz, 5A',
       'Dimensions(mm)': '610 x 500 x 350',
       'Weight(kg)': 69,
@@ -50,9 +50,9 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       },
       {
         rotor: 'Angle Rotor-4',
-        capacity: '24 x 1.5 ml / 2.0 ml',
+        capacity: '24 x 1.5 ml / 2.2 ml',
         maxSpeed: '16000 RPM',
-        maxRCF: '23800 x g',
+        maxRCF: '24607 x g',
       },
       {
         rotor: 'Angle Rotor-5',
@@ -68,9 +68,9 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       },
       {
         rotor: 'Angle Rotor-7',
-        capacity: '10 x 5 ml',
+        capacity: '12 x 5 ml',
         maxSpeed: '16000 RPM',
-        maxRCF: '17780 x g',
+        maxRCF: '19336 x g',
       },
       {
         rotor: 'Angle Rotor-8',
@@ -119,7 +119,7 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
   {
     id: 2,
     name: 'Micro Centrifuge MC-20',
-    image: '/assets/inno-MC20R.png',
+    image: '/assets/inno-MC20.png',
     description: `innoTECH laboratory refrigerated centrifuge is a high-quality centrifuge with excellent performance for research labs, clinics, biotechnological, industrial, and hospitals. Microprocessor control. Induction motor maintenance free. Messages on the screen indicating the centrifuge and accessoriesstate. RPM/RCF adjustable along the run, Up to 30 programs in-store, countdown start at set RPM /RCF and rotors information on memory.Centrifugation chamber in stainless steel, guard ring around the chamber with manual emergency lid release.`,
     specs: {
       Model: 'inno-MC-20',
@@ -166,9 +166,9 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       },
       {
         rotor: 'Angle Rotor-4',
-        capacity: '24 x 1.5 ml / 2.0 ml',
+        capacity: '24 x 1.5 ml / 2.2 ml',
         maxSpeed: '16000 RPM',
-        maxRCF: '23800 x g',
+        maxRCF: '24607 x g',
       },
       {
         rotor: 'Angle Rotor-5',
@@ -184,9 +184,9 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
       },
       {
         rotor: 'Angle Rotor-7',
-        capacity: '10 x 5 ml',
+        capacity: '12 x 5 ml',
         maxSpeed: '16000 RPM',
-        maxRCF: '17780 x g',
+        maxRCF: '19336 x g',
       },
       {
         rotor: 'Angle Rotor-8',
@@ -229,7 +229,7 @@ Over speed, over temperature, door interlock, imbalance protection, ensures safe
   {
     id: 3,
     name: 'Micro Centrifuge MC-16R',
-    image: '/assets/inno-MC20R.png',
+    image: '/assets/inno-MC16R.png',
     description: `innoTECH laboratory refrigerated centrifuge is high quality centrifuge with excellent performance for research labs clinic, 
     biotechnological, industrial and hospitals. Microprocessor control. Induc on motor 
 maintenance free. Messages on screen 
