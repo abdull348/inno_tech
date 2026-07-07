@@ -19,7 +19,7 @@ const CTABanner = () => {
                 </span>
                 <h2 className='display-6 mb-3 mt-2'>
                   Ready to equip your lab with{' '}
-                  <span style={{ color: '#7ad3ff' }}>
+                  <span style={{ color: '#ffd699' }}>
                     confidence and precision?
                   </span>
                 </h2>

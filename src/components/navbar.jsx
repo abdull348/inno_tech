@@ -9,7 +9,7 @@ import {
   ArrowRight,
   ShieldCheck,
 } from 'lucide-react';
-import innotech from '/assets/nav-logo.svg';
+import innotech from '/assets/inno-tech_logo.png';
 
 const navItems = [
   { title: 'Home', path: '/' },
@@ -20,7 +20,6 @@ const navItems = [
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -51,12 +50,6 @@ function Navbar() {
     setIsOpen(false);
   }, [location]);
 
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
     <>
       <div className='it-topbar d-none d-lg-block'>
@@ -64,7 +57,7 @@ function Navbar() {
           <div className='d-flex align-items-center justify-content-between'>
             <div className='d-flex align-items-center gap-3'>
               <span className='d-inline-flex align-items-center gap-2'>
-                <ShieldCheck size={14} style={{ color: '#7ad3ff' }} />
+                <ShieldCheck size={14} style={{ color: '#ffd699' }} />
                 ISO Certified · US-Based Technical Support
               </span>
             </div>
@@ -91,7 +84,7 @@ function Navbar() {
         </div>
       </div>
 
-      <nav className={`it-nav ${isScrolled ? 'scrolled' : ''}`}>
+      <nav className='it-nav'>
         <div className='container'>
           <div className='it-nav-inner d-flex align-items-center justify-content-between'>
             <Link to='/' className='d-flex align-items-center'>
@@ -142,7 +135,7 @@ function Navbar() {
             <div
               className='d-lg-none position-fixed top-0 start-0 w-100 h-100'
               style={{
-                background: 'rgba(10,31,68,0.55)',
+                background: 'rgba(27,23,18,0.55)',
                 zIndex: 1040,
                 backdropFilter: 'blur(2px)',
               }}
@@ -154,7 +147,7 @@ function Navbar() {
                 width: '78%',
                 maxWidth: '320px',
                 zIndex: 1050,
-                boxShadow: '-8px 0 24px rgba(10,31,68,0.18)',
+                boxShadow: '-8px 0 24px rgba(27,23,18,0.18)',
               }}
             >
               <div className='d-flex justify-content-between align-items-center mb-4'>

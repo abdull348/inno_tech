@@ -59,7 +59,7 @@ const ScrollToTop = () => {
             cy='50'
             r='45'
             fill='none'
-            stroke='#3b82f6' // Blue progress
+            stroke='#f0661f' // Orange progress
             strokeWidth='4'
             strokeDasharray='283' // 2πr ≈ 283 (for r=45)
             strokeDashoffset={283 - (283 * scrollProgress) / 100}

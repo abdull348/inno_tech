@@ -208,7 +208,7 @@ function ContactUs() {
                     fontSize: '0.85rem',
                   }}
                 >
-                  <ShieldCheck size={16} style={{ color: '#7ad3ff' }} />
+                  <ShieldCheck size={16} style={{ color: '#ffd699' }} />
                   Your information is confidential and never shared.
                 </div>
               </div>

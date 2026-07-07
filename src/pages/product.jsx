@@ -505,7 +505,7 @@ const Products = () => {
                   width: '64px',
                   height: '64px',
                   background:
-                    'linear-gradient(135deg, #0066cc 0%, #0a1f44 100%)',
+                    'linear-gradient(135deg, #f0661f 0%, #1b1712 100%)',
                   color: '#fff',
                 }}
               >

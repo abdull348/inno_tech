@@ -10,7 +10,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import innotech from '/assets/nav-logo.svg';
+import innotech from '/assets/inno-tech_logo.png';
 
 const footerLinks = [
   {
@@ -158,7 +158,7 @@ function Footer() {
               <li className='d-flex align-items-start gap-2'>
                 <MapPin
                   size={14}
-                  style={{ color: '#7ad3ff', marginTop: '4px' }}
+                  style={{ color: '#ffd699', marginTop: '4px' }}
                 />
                 <span style={{ color: 'rgba(255,255,255,0.7)' }}>
                   Lenexa, KS 66215
@@ -171,7 +171,7 @@ function Footer() {
                   href='tel:+18189431786'
                   className='d-inline-flex align-items-center gap-2'
                 >
-                  <Phone size={14} style={{ color: '#7ad3ff' }} />
+                  <Phone size={14} style={{ color: '#ffd699' }} />
                   +1 (818) 943-1786
                 </a>
               </li>
@@ -180,7 +180,7 @@ function Footer() {
                   href='mailto:info@innotechtechnologies.us'
                   className='d-inline-flex align-items-center gap-2'
                 >
-                  <Mail size={14} style={{ color: '#7ad3ff' }} />
+                  <Mail size={14} style={{ color: '#ffd699' }} />
                   info@innotechtechnologies.us
                 </a>
               </li>
@@ -188,7 +188,7 @@ function Footer() {
                 className='d-inline-flex align-items-center gap-2'
                 style={{ color: 'rgba(255,255,255,0.7)' }}
               >
-                <ShieldCheck size={14} style={{ color: '#7ad3ff' }} />
+                <ShieldCheck size={14} style={{ color: '#ffd699' }} />
                 ISO Certified
               </li>
             </ul>
@@ -206,7 +206,7 @@ function Footer() {
               href='https://devprimo.com/'
               target='_blank'
               rel='noopener noreferrer'
-              style={{ color: '#7ad3ff' }}
+              style={{ color: 'inherit', fontWeight: 'inherit', paddingLeft: 0 }}
             >
               Devprimo
             </a>
