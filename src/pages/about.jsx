@@ -81,13 +81,13 @@ const milestones = [
       'Crossed the 100-institution mark across the United States, with expanding service in pharma and biotech.',
   },
   {
-    year: '2021',
+    year: '2022',
     title: 'Global Logistics Network',
     description:
       'Launched 48-hour emergency dispatch with regional warehouses and on-site service engineers.',
   },
   {
-    year: '2024',
+    year: '2026',
     title: '500+ Labs · 30+ Countries',
     description:
       'Trusted by leading research institutions, hospitals, and biotech innovators worldwide.',

@@ -2,12 +2,10 @@ import {
   Mail,
   MapPin,
   Phone,
-  ArrowRight,
   Linkedin,
   Twitter,
   Facebook,
-  Youtube,
-  ShieldCheck,
+  Youtube
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import innotech from '/assets/inno-tech_logo.png';
@@ -71,33 +69,6 @@ function Footer() {
               technical support — trusted by 500+ research institutions
               worldwide.
             </p>
-
-            <div className='footer-newsletter'>
-              <h6 style={{ marginBottom: '0.7rem' }}>Stay in the loop</h6>
-              <p
-                style={{
-                  color: 'rgba(255,255,255,0.6)',
-                  fontSize: '0.85rem',
-                  marginBottom: '0.75rem',
-                }}
-              >
-                Product updates, technical guides, and special offers.
-              </p>
-              <form
-                className='d-flex gap-2'
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type='email'
-                  placeholder='you@lab.edu'
-                  aria-label='Email address'
-                  required
-                />
-                <button type='submit' aria-label='Subscribe'>
-                  <ArrowRight size={16} />
-                </button>
-              </form>
-            </div>
 
             <div className='d-flex align-items-center gap-2 mt-4'>
               <a
@@ -183,13 +154,6 @@ function Footer() {
                   <Mail size={14} style={{ color: '#ffd699' }} />
                   info@innotechtechnologies.us
                 </a>
-              </li>
-              <li
-                className='d-inline-flex align-items-center gap-2'
-                style={{ color: 'rgba(255,255,255,0.7)' }}
-              >
-                <ShieldCheck size={14} style={{ color: '#ffd699' }} />
-                ISO Certified
               </li>
             </ul>
           </div>
